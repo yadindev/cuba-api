@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Municipality;
 use App\Http\Requests\StoreMunicipalityRequest;
 use App\Http\Requests\UpdateMunicipalityRequest;
+use App\Http\Resources\MunicipalityCollection;
 
 class MunicipalityController extends Controller
 {
@@ -13,7 +14,8 @@ class MunicipalityController extends Controller
      */
     public function index()
     {
-        //
+        $municipalities = Municipality::all();
+        return new MunicipalityCollection($municipalities);
     }
 
     /**
