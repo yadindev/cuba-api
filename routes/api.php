@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\MunicipalityController;
 use App\Http\Controllers\ProvinceController;
+use App\Http\Resources\ProvinceCollection;
+use App\Models\Province;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +23,10 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers'], function () {
-  Route::apiResource('provinces', ProvinceController::class);
-  Route::apiResource('municipalities', MunicipalityController::class);
+  Route::apiResource('provincias', ProvinceController::class);
+  Route::apiResource('municipios', MunicipalityController::class);
+  Route::get('/all', function () {
+    $provinces = Province::all();
+    return new ProvinceCollection($provinces);
+  });
 });
