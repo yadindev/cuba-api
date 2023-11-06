@@ -22,9 +22,19 @@ class MunicipalityController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Municipality $municipality)
+    public function show($id)
     {
+        $municipality = Municipality::find($id);
+        if (!$municipality) {
+            return response()->json(
+                [
+                    'data' => [
+                        'msg' => "El municipio con el identificador $id no existe"
+                    ]
+                ],
+                404
+            );
+        }
         return new MunicipalityResource($municipality);
     }
-
 }
