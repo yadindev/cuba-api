@@ -23,10 +23,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers'], function () {
+  Route::get('/provincias-municipios', [ProvinceController::class, 'all']);
   Route::apiResource('provincias', ProvinceController::class);
   Route::apiResource('municipios', MunicipalityController::class);
-  Route::get('/all', function () {
-    $provinces = Province::all();
-    return new ProvinceCollection($provinces);
-  });
 });
