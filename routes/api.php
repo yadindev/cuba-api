@@ -23,9 +23,13 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers'], function () {
+  /* Rutas de provincias */
   Route::get('/provincias-municipios', [ProvinceController::class, 'all']);
   Route::get('/provincias', [ProvinceController::class, 'index']);
   Route::get('/provincias/{idProvincia}', [ProvinceController::class, 'show']);
-  // Route::apiResource('provincias', ProvinceController::class);
-  // Route::apiResource('municipios', MunicipalityController::class);
+
+  /* Rutas de municipios */
+  Route::get('/municipios', [MunicipalityController::class, 'index']);
+  Route::get('/municipios/{idMunicipio}', [MunicipalityController::class, 'show']);
+
 });
