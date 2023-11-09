@@ -23,11 +23,15 @@ class ProvinceController extends Controller
     {
         $provinces = Province::all();
         return new ProvincesCollection($provinces);
-        // return response()->json($provinces);
     }
 
     /**
-     * Display the specified resource.
+     * Muestra Provincia
+     * 
+     * Muestra los datos de una provincia especifica
+     * 
+     * 
+     * @param integer $id El ID de la provincia a buscar
      */
     public function show($id)
     {

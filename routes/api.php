@@ -25,6 +25,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers'], function () {
   Route::get('/provincias-municipios', [ProvinceController::class, 'all']);
   Route::get('/provincias', [ProvinceController::class, 'index']);
+  Route::get('/provincias/{idProvincia}', [ProvinceController::class, 'show']);
   // Route::apiResource('provincias', ProvinceController::class);
   // Route::apiResource('municipios', MunicipalityController::class);
 });
