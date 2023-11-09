@@ -4,7 +4,4 @@ echo "Running composer install..."
 composer install --no-dev --working-dir=/var/www/html
 
 echo "Running migrations..."
-php artisan migrate --force
-
-echo "Runing seed"
-php artisan db:seed
+php artisan migrate:refresh --seed --force
