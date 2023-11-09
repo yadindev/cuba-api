@@ -56,7 +56,10 @@ return [
      * ],
      * ```
      */
-    'servers' => null,
+    'servers' => [
+        'Live' => 'api',
+        'Prod' => 'https://cuba-api.onrender.com/api',
+    ],
 
     'middleware' => [
         'web',
