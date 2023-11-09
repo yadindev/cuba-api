@@ -11,7 +11,11 @@ use App\Http\Resources\MunicipalityResource;
 class MunicipalityController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Mostrar Municipios
+     * 
+     * Muestra solo los municipios con sus datos 
+     * 
+     * 
      */
     public function index()
     {
@@ -19,8 +23,14 @@ class MunicipalityController extends Controller
         return new MunicipalityCollection($municipalities);
     }
 
+
     /**
-     * Display the specified resource.
+     * Muestra Municipio
+     * 
+     * Muestra los datos de un municipio especifico
+     * 
+     * 
+     * @param integer $id El ID del municipio a buscar
      */
     public function show($id)
     {

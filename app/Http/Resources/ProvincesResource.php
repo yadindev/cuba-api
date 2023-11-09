@@ -18,7 +18,7 @@ class ProvincesResource extends JsonResource
             'id' => $this->id,
             'nombre' => $this->name,
             'acronimo' => $this->short_name,
-            'es_capital' => $this->capital ? true : false,
+            'es_capital' => $this->capital
         ];
     }
 }
