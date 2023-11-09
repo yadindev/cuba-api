@@ -58,8 +58,8 @@ return [
      */
 
     'servers' => [
-        'Live' => 'api',
-        'Prod' => 'https://cuba-api.onrender.com/api',
+        'local' => 'api/v1',
+        'Prod' => 'https://cuba-api.onrender.com/api/v1',
     ],
 
 
