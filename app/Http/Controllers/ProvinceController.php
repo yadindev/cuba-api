@@ -13,13 +13,17 @@ use Illuminate\Http\Request;
 class ProvinceController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Mostrar Provincias
+     * 
+     * Muestra solo las provincias con sus datos , exceptuando su relacion con sus municipios
+     * 
+     * 
      */
     public function index()
     {
         $provinces = Province::all();
-        // return new ProvincesCollection($provinces);
-        return response()->json($provinces);
+        return new ProvincesCollection($provinces);
+        // return response()->json($provinces);
     }
 
     /**
@@ -43,6 +47,12 @@ class ProvinceController extends Controller
         return new ProvinceResource($province);
     }
 
+    /**
+     * Mostrar provincias y municipios.
+     * 
+     * Muestra todos los datos de la api, es decir las provincias con sus datos y todos los 
+     * municipios asociados a ellas con sus datos
+     */
     public function all()
     {
         $provinces = Province::all();
