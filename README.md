@@ -5,7 +5,7 @@ Cuba-api es un proyecto pequeño que permite consultar datos de la división pol
 ## Endpoints
 
 La API de Cuba-api ofrece los siguientes endpoints:
-- /all : Obtiene la lista de todas la provincias con sus municipios.
+- /provincias-municipios : Obtiene la lista de todas la provincias con sus municipios.
 - /provincias: Obtiene la lista de todas las provincias de Cuba.
 - /provincias/:id: Obtiene los detalles de una provincia específica por su ID.
 - /municipios: Obtiene la lista de todos los municipios de Cuba.
