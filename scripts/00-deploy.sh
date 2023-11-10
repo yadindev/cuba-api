@@ -7,3 +7,6 @@ echo "Running migrations..."
 
 php artisan migrate:refresh --seed --force
 
+echo "Running api docs generator"
+
+php artisan l5-swagger:generate
