@@ -1,0 +1,374 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Cuba-api",
+        "description": "Api para consultar la division administrativa de Cuba",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "https://cuba-api.onrender.com/api/v1/"
+        }
+    ],
+    "paths": {
+        "/municipios": {
+            "get": {
+                "tags": [
+                    "Municipios"
+                ],
+                "summary": "Obtener  municipios",
+                "description": "Obtiene todos los datos de todos los municipios",
+                "operationId": "a89fff348ec22fa8388fb51fdb4f594e",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id_municipio": {
+                                                        "type": "number",
+                                                        "example": "1"
+                                                    },
+                                                    "nombre_municipio": {
+                                                        "type": "string",
+                                                        "example": "Alquizar"
+                                                    },
+                                                    "es_cabecera_provincial": {
+                                                        "type": "boolean",
+                                                        "example": "false"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/municipios/{id}": {
+            "get": {
+                "tags": [
+                    "Municipios"
+                ],
+                "summary": "Obtener Municipio",
+                "description": "Obtiene todos los datos de un municipio",
+                "operationId": "72e2749a500c1475df4ca1c6da589c85",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "El id del municipio",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64",
+                            "maximum": 165,
+                            "minimum": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "id_municipio": {
+                                                    "type": "number",
+                                                    "example": "1"
+                                                },
+                                                "nombre_municipio": {
+                                                    "type": "string",
+                                                    "example": "Alquizar"
+                                                },
+                                                "es_cabecera_provincial": {
+                                                    "type": "boolean",
+                                                    "example": "false"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/provincias": {
+            "get": {
+                "tags": [
+                    "Provincias"
+                ],
+                "summary": "Obtener todas las provincias",
+                "description": "Obtiene todos los datos de una provincia sin contar su relacion con los municipios",
+                "operationId": "658c066842a79296a20b4470635a6287",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "number",
+                                                        "example": "1"
+                                                    },
+                                                    "nombre": {
+                                                        "type": "string",
+                                                        "example": "Artemisa"
+                                                    },
+                                                    "acronimo": {
+                                                        "type": "string",
+                                                        "example": "ART"
+                                                    },
+                                                    "es_capital": {
+                                                        "type": "boolean",
+                                                        "example": "false"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/provincias/{id}": {
+            "get": {
+                "tags": [
+                    "Provincias"
+                ],
+                "summary": "Obtener Provincia",
+                "description": "Obtiene todos los datos de todas las provincias con su relacion con los municipios y sus datos",
+                "operationId": "4ec62e2f5241b4a53cafd22acde9222a",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "El id de la provincia",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64",
+                            "maximum": 16,
+                            "minimum": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "number",
+                                                        "example": "1"
+                                                    },
+                                                    "nombre": {
+                                                        "type": "string",
+                                                        "example": "Artemisa"
+                                                    },
+                                                    "acronimo": {
+                                                        "type": "string",
+                                                        "example": "ART"
+                                                    },
+                                                    "es_capital": {
+                                                        "type": "boolean",
+                                                        "example": "false"
+                                                    },
+                                                    "municipios": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "properties": {
+                                                                "id_municipio": {
+                                                                    "type": "number",
+                                                                    "example": "1"
+                                                                },
+                                                                "nombre_municipio": {
+                                                                    "type": "string",
+                                                                    "example": "Alquizar"
+                                                                },
+                                                                "es_cabecera_provincial": {
+                                                                    "type": "boolean",
+                                                                    "example": "false"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        }
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "msg": {
+                                                        "type": "string",
+                                                        "example": "La provincia con ese id no existe"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/provincias-municipios": {
+            "get": {
+                "tags": [
+                    "Provincias"
+                ],
+                "summary": "Obtener todas las provincias y sus municipios",
+                "description": "Obtiene todos los datos de todas las provincias con su relacion con los municipios y sus datos",
+                "operationId": "b681158558875a180dbabdaf924a6e68",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "number",
+                                                        "example": "1"
+                                                    },
+                                                    "nombre": {
+                                                        "type": "string",
+                                                        "example": "Artemisa"
+                                                    },
+                                                    "acronimo": {
+                                                        "type": "string",
+                                                        "example": "ART"
+                                                    },
+                                                    "es_capital": {
+                                                        "type": "boolean",
+                                                        "example": "false"
+                                                    },
+                                                    "municipios": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "properties": {
+                                                                "id_municipio": {
+                                                                    "type": "number",
+                                                                    "example": "1"
+                                                                },
+                                                                "nombre_municipio": {
+                                                                    "type": "string",
+                                                                    "example": "Alquizar"
+                                                                },
+                                                                "es_cabecera_provincial": {
+                                                                    "type": "boolean",
+                                                                    "example": "false"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        }
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "responses": {
+            "404": {
+                "description": "Not Found",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "msg": {
+                                                "type": "string",
+                                                "example": "La provincia con ese id no existe"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Municipios",
+            "description": "Datos de los municipios"
+        },
+        {
+            "name": "Provincias",
+            "description": "Datos de las provincias"
+        }
+    ]
+}

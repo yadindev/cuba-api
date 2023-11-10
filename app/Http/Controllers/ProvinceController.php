@@ -10,15 +10,58 @@ use App\Http\Resources\ProvinceResource;
 use App\Http\Resources\ProvincesCollection;
 use Illuminate\Http\Request;
 
+
+/**
+ * @OA\Tag(
+ *     name="Provincias",
+ *     description="Datos de las provincias"
+ * )
+ */
 class ProvinceController extends Controller
 {
     /**
-     * Mostrar Provincias
+     * Obtener todas las provincias
      * 
-     * Muestra solo las provincias con sus datos , exceptuando su relacion con sus municipios
-     * 
-     * 
+     * Obtiene todos los datos de una provincia sin contar su relacion con los municipios
+     * @OA\Get (
+     *     path="/provincias",
+     *     tags={"Provincias"},
+     *     @OA\Response(
+     *         response=200,
+     *         description="OK",
+     *         @OA\JsonContent(
+     *             @OA\Property(
+     *                 type="array",
+     *                 property="data",
+     *                 @OA\Items(
+     *                     type="object",
+     *                     @OA\Property(
+     *                         property="id",
+     *                         type="number",
+     *                         example="1"
+     *                     ),
+     *                     @OA\Property(
+     *                         property="nombre",
+     *                         type="string",
+     *                         example="Artemisa"
+     *                     ),
+     *                     @OA\Property(
+     *                         property="acronimo",
+     *                         type="string",
+     *                         example="ART"
+     *                     ),
+     *                     @OA\Property(
+     *                         property="es_capital",
+     *                         type="boolean",
+     *                         example="false"
+     *                     )
+     *                 )
+     *             )
+     *         )
+     *     )
+     * )
      */
+
     public function index()
     {
         $provinces = Province::all();
@@ -26,12 +69,86 @@ class ProvinceController extends Controller
     }
 
     /**
-     * Muestra Provincia
+     * Obtener Provincia
      * 
-     * Muestra los datos de una provincia especifica
-     * 
-     * 
-     * @param integer $id El ID de la provincia a buscar
+     * Obtiene todos los datos de todas las provincias con su relacion con los municipios y sus datos
+     * @OA\Get (
+     *     path="/provincias/{id}",
+     *     tags={"Provincias"},
+     *    @OA\Parameter(
+     *         name="id",
+     *         required=true,
+     *         in="path",
+     *         description="El id de la provincia",
+     *         @OA\Schema(
+     *             type="integer",
+     *             format="int64",
+     *             minimum=1,
+     *             maximum=16,
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="OK",
+     *         @OA\JsonContent(
+     *             @OA\Property(
+     *                 type="array",
+     *                 property="data",
+     *                 @OA\Items(
+     *                     type="object",
+     *                     @OA\Property(
+     *                         property="id",
+     *                         type="number",
+     *                         example="1"
+     *                     ),
+     *                     @OA\Property(
+     *                         property="nombre",
+     *                         type="string",
+     *                         example="Artemisa"
+     *                     ),
+     *                     @OA\Property(
+     *                         property="acronimo",
+     *                         type="string",
+     *                         example="ART"
+     *                     ),
+     *                     @OA\Property(
+     *                         property="es_capital",
+     *                         type="boolean",
+     *                         example="false"
+     *                     ),
+     *                     @OA\Property(
+     *                         property="municipios",
+     *                         type="array",
+     *                         @OA\Items(
+     *                              type="object",
+     *                              @OA\Property(property="id_municipio",type="number",example="1"),
+     *                              @OA\Property(property="nombre_municipio",type="string",example="Alquizar"),
+     *                              @OA\Property(property="es_cabecera_provincial",type="boolean",example="false"),
+     *                         )
+     *                     ),
+     *                 )
+     *             )
+     *         )
+     *     ),
+     * *     @OA\Response(
+     *         response=404,
+     *         description="Not Found",
+     *         @OA\JsonContent(
+     *             @OA\Property(
+     *                 type="array",
+     *                 property="data",
+     *                 @OA\Items(
+     *                     type="object",
+     *                     @OA\Property(
+     *                         property="msg",
+     *                         type="string",
+     *                         example="La provincia con ese id no existe"
+     *                     ),
+     *                 )
+     *             )
+     *         )
+     *     )
+     * )
      */
     public function show($id)
     {
@@ -52,10 +169,56 @@ class ProvinceController extends Controller
     }
 
     /**
-     * Mostrar provincias y municipios.
+     * Obtener todas las provincias y sus municipios
      * 
-     * Muestra todos los datos de la api, es decir las provincias con sus datos y todos los 
-     * municipios asociados a ellas con sus datos
+     * Obtiene todos los datos de todas las provincias con su relacion con los municipios y sus datos
+     * @OA\Get (
+     *     path="/provincias-municipios",
+     *     tags={"Provincias"},
+     *     @OA\Response(
+     *         response=200,
+     *         description="OK",
+     *         @OA\JsonContent(
+     *             @OA\Property(
+     *                 type="array",
+     *                 property="data",
+     *                 @OA\Items(
+     *                     type="object",
+     *                     @OA\Property(
+     *                         property="id",
+     *                         type="number",
+     *                         example="1"
+     *                     ),
+     *                     @OA\Property(
+     *                         property="nombre",
+     *                         type="string",
+     *                         example="Artemisa"
+     *                     ),
+     *                     @OA\Property(
+     *                         property="acronimo",
+     *                         type="string",
+     *                         example="ART"
+     *                     ),
+     *                     @OA\Property(
+     *                         property="es_capital",
+     *                         type="boolean",
+     *                         example="false"
+     *                     ),
+     *                     @OA\Property(
+     *                         property="municipios",
+     *                         type="array",
+     *                         @OA\Items(
+     *                              type="object",
+     *                              @OA\Property(property="id_municipio",type="number",example="1"),
+     *                              @OA\Property(property="nombre_municipio",type="string",example="Alquizar"),
+     *                              @OA\Property(property="es_cabecera_provincial",type="boolean",example="false"),
+     *                         )
+     *                     ),
+     *                 )
+     *             )
+     *         )
+     *     )
+     * )
      */
     public function all()
     {

@@ -14,5 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect()->route('scramble.docs.api');
+    return redirect('api/documentation');
 });
