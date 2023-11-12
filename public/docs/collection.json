@@ -5,12 +5,12 @@
             "key": "baseUrl",
             "type": "string",
             "name": "string",
-            "value": "http:\/\/localhost"
+            "value": "https:\/\/cuba-api.onrender.com"
         }
     ],
     "info": {
         "name": "Cuba-api",
-        "_postman_id": "1b78e31c-530f-44f1-80d4-6535635b4a7d",
+        "_postman_id": "4f76778b-3cff-48d2-9959-b8e6003a06de",
         "description": "Api para la consulta de la distribucion de cuba",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -143,7 +143,7 @@
                                 {
                                     "id": "idProvincia",
                                     "key": "idProvincia",
-                                    "value": "molestias",
+                                    "value": "corporis",
                                     "description": ""
                                 }
                             ]
@@ -263,7 +263,7 @@
                                 {
                                     "id": "idMunicipio",
                                     "key": "idMunicipio",
-                                    "value": "quia",
+                                    "value": "ut",
                                     "description": ""
                                 }
                             ]

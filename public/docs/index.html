@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
@@ -13,17 +14,21 @@
 
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
 
-    <link rel="stylesheet"
-          href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/obsidian.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/obsidian.min.css">
     <script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jets/0.14.1/jets.min.js"></script>
 
     <style id="language-style">
         /* starts out as display none and is replaced with js later  */
-                    body .content .bash-example code { display: none; }
-                    body .content .javascript-example code { display: none; }
-            </style>
+        body .content .bash-example code {
+            display: none;
+        }
+
+        body .content .javascript-example code {
+            display: none;
+        }
+    </style>
 
     <script>
         var tryItOutBaseUrl = "http://localhost";
@@ -38,109 +43,113 @@
 
 <body data-languages="[&quot;bash&quot;,&quot;javascript&quot;]">
 
-<a href="#" id="nav-button">
-    <span>
-        MENU
-        <img src="../docs/images/navbar.png" alt="navbar-image"/>
-    </span>
-</a>
-<div class="tocify-wrapper">
-    
-            <div class="lang-selector">
-                                            <button type="button" class="lang-button" data-language-name="bash">bash</button>
-                                            <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
-                    </div>
-    
-    <div class="search">
-        <input type="text" class="search" id="input-search" placeholder="Search">
-    </div>
+    <a href="#" id="nav-button">
+        <span>
+            MENU
+            <img src="../docs/images/navbar.png" alt="navbar-image" />
+        </span>
+    </a>
+    <div class="tocify-wrapper">
 
-    <div id="toc">
-                    <ul id="tocify-header-introduction" class="tocify-header">
+        <!-- <div class="lang-selector">
+            <button type="button" class="lang-button" data-language-name="bash">bash</button>
+            <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+        </div> -->
+
+        <div class="search">
+            <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+
+        <div id="toc">
+            <ul id="tocify-header-introduction" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="introduction">
-                    <a href="#introduction">Introduction</a>
+                    <a href="#introduction">Introducion</a>
                 </li>
-                            </ul>
-                    <ul id="tocify-header-authenticating-requests" class="tocify-header">
+            </ul>
+            <!-- <ul id="tocify-header-authenticating-requests" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="authenticating-requests">
                     <a href="#authenticating-requests">Authenticating requests</a>
                 </li>
-                            </ul>
-                    <ul id="tocify-header-endpoints" class="tocify-header">
+            </ul> -->
+            <ul id="tocify-header-endpoints" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="endpoints">
                     <a href="#endpoints">Endpoints</a>
                 </li>
-                                    <ul id="tocify-subheader-endpoints" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-provincias-municipios">
-                                <a href="#endpoints-GETapi-v1-provincias-municipios">Obtener todas las provincias y sus municipios</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-provincias">
-                                <a href="#endpoints-GETapi-v1-provincias">Obtener todas las provincias</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-provincias--idProvincia-">
-                                <a href="#endpoints-GETapi-v1-provincias--idProvincia-">Obtener Provincia</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-municipios">
-                                <a href="#endpoints-GETapi-v1-municipios">Obtener  municipios</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-municipios--idMunicipio-">
-                                <a href="#endpoints-GETapi-v1-municipios--idMunicipio-">Obtener Municipio</a>
-                            </li>
-                                                                        </ul>
-                            </ul>
-            </div>
+                <ul id="tocify-subheader-endpoints" class="tocify-subheader">
+                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-provincias-municipios">
+                        <a href="#endpoints-GETapi-v1-provincias-municipios">Obtener todas las provincias y sus
+                            municipios</a>
+                    </li>
+                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-provincias">
+                        <a href="#endpoints-GETapi-v1-provincias">Obtener todas las provincias</a>
+                    </li>
+                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-provincias--idProvincia-">
+                        <a href="#endpoints-GETapi-v1-provincias--idProvincia-">Obtener Provincia</a>
+                    </li>
+                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-municipios">
+                        <a href="#endpoints-GETapi-v1-municipios">Obtener municipios</a>
+                    </li>
+                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-municipios--idMunicipio-">
+                        <a href="#endpoints-GETapi-v1-municipios--idMunicipio-">Obtener Municipio</a>
+                    </li>
+                </ul>
+            </ul>
+        </div>
 
-    <ul class="toc-footer" id="toc-footer">
-                    <li style="padding-bottom: 5px;"><a href="../docs/collection.json">View Postman collection</a></li>
-                            <li style="padding-bottom: 5px;"><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
-                <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
-    </ul>
+        <ul class="toc-footer" id="toc-footer">
+            <li style="padding-bottom: 5px;"><a href="../docs/collection.json">View Postman collection</a></li>
+            <li style="padding-bottom: 5px;"><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
+            <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+        </ul>
 
-    <ul class="toc-footer" id="last-updated">
-        <li>Last updated: November 12, 2023</li>
-    </ul>
-</div>
+        <ul class="toc-footer" id="last-updated">
+            <li>Last updated: November 12, 2023</li>
+        </ul>
+    </div>
 
-<div class="page-wrapper">
-    <div class="dark-box"></div>
-    <div class="content">
-        <h1 id="introduction">Introduction</h1>
-<p>Api para la consulta de la distribucion de cuba</p>
-<aside>
-    <strong>Base URL</strong>: <code>http://localhost</code>
-</aside>
-<p>This documentation aims to provide all the information you need to work with our API.</p>
-<aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
-You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
+    <div class="page-wrapper">
+        <div class="dark-box"></div>
+        <div class="content">
+            <h1 id="introduction">Introduction</h1>
+            <p>Api para la consulta de la distribucion de cuba</p>
+            <aside>
+                <strong>Base URL</strong>: <code>https://cuba-api.onrender.com</code>
+            </aside>
+            <!-- <p>This documentation aims to provide all the information you need to work with our API.</p> -->
+            <!-- <aside>As you scroll, you'll see code examples for working with the API in different programming languages
+                in the dark area to the right (or as part of the content on mobile).
+                You can switch the language used with the tabs at the top right (or from the nav menu at the top left on
+                mobile).</aside> -->
 
-        <h1 id="authenticating-requests">Authenticating requests</h1>
-<p>This API is not authenticated.</p>
+            <!-- <h1 id="authenticating-requests">Authenticating requests</h1>
+            <p>This API is not authenticated.</p> -->
 
-        <h1 id="endpoints">Endpoints</h1>
-
-    
-
-                                <h2 id="endpoints-GETapi-v1-provincias-municipios">Obtener todas las provincias y sus municipios</h2>
-
-<p>
-</p>
-
-<p>Obtiene todos los datos de todas las provincias con su relacion con los municipios y sus datos</p>
-
-<span id="example-requests-GETapi-v1-provincias-municipios">
-<blockquote>Example request:</blockquote>
+            <h1 id="endpoints">Endpoints</h1>
 
 
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/provincias-municipios" \
+
+            <h2 id="endpoints-GETapi-v1-provincias-municipios">Obtener todas las provincias y sus municipios</h2>
+
+            <p>
+            </p>
+
+            <p>Obtiene todos los datos de todas las provincias con su relacion con los municipios y sus datos</p>
+
+            <span id="example-requests-GETapi-v1-provincias-municipios">
+                <blockquote>Example request:</blockquote>
+
+
+                <div class="bash-example">
+                    <pre><code class="language-bash">curl --request GET \
+    --get "https://cuba-api.onrender.com/api/v1/provincias-municipios" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json"</code></pre>
+                </div>
 
 
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/provincias-municipios"
+                <div class="javascript-example">
+                    <pre><code class="language-javascript">const url = new URL(
+    "https://cuba-api.onrender.com/api/v1/provincias-municipios"
 );
 
 const headers = {
@@ -151,24 +160,29 @@ const headers = {
 fetch(url, {
     method: "GET",
     headers,
-}).then(response =&gt; response.json());</code></pre></div>
+}).then(response =&gt; response.json());</code></pre>
+                </div>
 
-</span>
+            </span>
 
-<span id="example-responses-GETapi-v1-provincias-municipios">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
+            <span id="example-responses-GETapi-v1-provincias-municipios">
+                <blockquote>
+                    <p>Example response (200):</p>
+                </blockquote>
                 <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
+                    <summary style="cursor: pointer;">
+                        <small
+                            onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show
+                            headers</small>
+                    </summary>
+                    <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
 x-ratelimit-remaining: 59
 access-control-allow-origin: *
- </code></pre></details>         <pre>
+ </code></pre>
+                </details>
+                <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
@@ -1132,99 +1146,92 @@ access-control-allow-origin: *
     ]
 }</code>
  </pre>
-    </span>
-<span id="execution-results-GETapi-v1-provincias-municipios" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-v1-provincias-municipios"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-provincias-municipios"
+            </span>
+            <span id="execution-results-GETapi-v1-provincias-municipios" hidden>
+                <blockquote>Received response<span
+                        id="execution-response-status-GETapi-v1-provincias-municipios"></span>:
+                </blockquote>
+                <pre class="json"><code id="execution-response-content-GETapi-v1-provincias-municipios"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-v1-provincias-municipios" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-provincias-municipios">
+            </span>
+            <span id="execution-error-GETapi-v1-provincias-municipios" hidden>
+                <blockquote>Request failed with error:</blockquote>
+                <pre><code id="execution-error-message-GETapi-v1-provincias-municipios">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-v1-provincias-municipios" data-method="GET"
-      data-path="api/v1/provincias-municipios"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-provincias-municipios', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
+            </span>
+            <form id="form-GETapi-v1-provincias-municipios" data-method="GET" data-path="api/v1/provincias-municipios"
+                data-authed="0" data-hasfiles="0" data-isarraybody="0" autocomplete="off"
+                onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-provincias-municipios', this);">
+                <h3>
+                    Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-v1-provincias-municipios"
-                    onclick="tryItOut('GETapi-v1-provincias-municipios');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-v1-provincias-municipios"
-                    onclick="cancelTryOut('GETapi-v1-provincias-municipios');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-v1-provincias-municipios"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/v1/provincias-municipios</code></b>
-        </p>
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-GETapi-v1-provincias-municipios"
+                        onclick="tryItOut('GETapi-v1-provincias-municipios');">Try it out ⚡
+                    </button>
+                    <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-GETapi-v1-provincias-municipios"
+                        onclick="cancelTryOut('GETapi-v1-provincias-municipios');" hidden>Cancel 🛑
+                    </button>&nbsp;&nbsp;
+                    <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-GETapi-v1-provincias-municipios" data-initial-text="Send Request 💥"
+                        data-loading-text="⏱ Sending..." hidden>Send Request 💥
+                    </button>
+                </h3>
+                <p>
+                    <small class="badge badge-green">GET</small>
+                    <b><code>api/v1/provincias-municipios</code></b>
+                </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-v1-provincias-municipios"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-v1-provincias-municipios"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        </form>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Content-Type"
+                        data-endpoint="GETapi-v1-provincias-municipios" value="application/json"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Accept"
+                        data-endpoint="GETapi-v1-provincias-municipios" value="application/json"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+            </form>
 
-                    <h2 id="endpoints-GETapi-v1-provincias">Obtener todas las provincias</h2>
+            <h2 id="endpoints-GETapi-v1-provincias">Obtener todas las provincias</h2>
 
-<p>
-</p>
+            <p>
+            </p>
 
-<p>Obtiene todos los datos de una provincia sin contar su relacion con los municipios</p>
+            <p>Obtiene todos los datos de una provincia sin contar su relacion con los municipios</p>
 
-<span id="example-requests-GETapi-v1-provincias">
-<blockquote>Example request:</blockquote>
+            <span id="example-requests-GETapi-v1-provincias">
+                <blockquote>Example request:</blockquote>
 
 
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/provincias" \
+                <div class="bash-example">
+                    <pre><code class="language-bash">curl --request GET \
+    --get "https://cuba-api.onrender.com/api/v1/provincias" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json"</code></pre>
+                </div>
 
 
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/provincias"
+                <div class="javascript-example">
+                    <pre><code class="language-javascript">const url = new URL(
+    "https://cuba-api.onrender.com/api/v1/provincias"
 );
 
 const headers = {
@@ -1235,24 +1242,29 @@ const headers = {
 fetch(url, {
     method: "GET",
     headers,
-}).then(response =&gt; response.json());</code></pre></div>
+}).then(response =&gt; response.json());</code></pre>
+                </div>
 
-</span>
+            </span>
 
-<span id="example-responses-GETapi-v1-provincias">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
+            <span id="example-responses-GETapi-v1-provincias">
+                <blockquote>
+                    <p>Example response (200):</p>
+                </blockquote>
                 <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
+                    <summary style="cursor: pointer;">
+                        <small
+                            onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show
+                            headers</small>
+                    </summary>
+                    <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
 x-ratelimit-remaining: 58
 access-control-allow-origin: *
- </code></pre></details>         <pre>
+ </code></pre>
+                </details>
+                <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
@@ -1355,99 +1367,88 @@ access-control-allow-origin: *
     ]
 }</code>
  </pre>
-    </span>
-<span id="execution-results-GETapi-v1-provincias" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-v1-provincias"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-provincias"
+            </span>
+            <span id="execution-results-GETapi-v1-provincias" hidden>
+                <blockquote>Received response<span id="execution-response-status-GETapi-v1-provincias"></span>:
+                </blockquote>
+                <pre class="json"><code id="execution-response-content-GETapi-v1-provincias"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-v1-provincias" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-provincias">
+            </span>
+            <span id="execution-error-GETapi-v1-provincias" hidden>
+                <blockquote>Request failed with error:</blockquote>
+                <pre><code id="execution-error-message-GETapi-v1-provincias">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-v1-provincias" data-method="GET"
-      data-path="api/v1/provincias"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-provincias', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
+            </span>
+            <form id="form-GETapi-v1-provincias" data-method="GET" data-path="api/v1/provincias" data-authed="0"
+                data-hasfiles="0" data-isarraybody="0" autocomplete="off"
+                onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-provincias', this);">
+                <h3>
+                    Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-v1-provincias"
-                    onclick="tryItOut('GETapi-v1-provincias');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-v1-provincias"
-                    onclick="cancelTryOut('GETapi-v1-provincias');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-v1-provincias"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/v1/provincias</code></b>
-        </p>
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-GETapi-v1-provincias" onclick="tryItOut('GETapi-v1-provincias');">Try it out ⚡
+                    </button>
+                    <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-GETapi-v1-provincias" onclick="cancelTryOut('GETapi-v1-provincias');"
+                        hidden>Cancel 🛑
+                    </button>&nbsp;&nbsp;
+                    <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-GETapi-v1-provincias" data-initial-text="Send Request 💥"
+                        data-loading-text="⏱ Sending..." hidden>Send Request 💥
+                    </button>
+                </h3>
+                <p>
+                    <small class="badge badge-green">GET</small>
+                    <b><code>api/v1/provincias</code></b>
+                </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-v1-provincias"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-v1-provincias"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        </form>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Content-Type" data-endpoint="GETapi-v1-provincias"
+                        value="application/json" data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Accept" data-endpoint="GETapi-v1-provincias"
+                        value="application/json" data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+            </form>
 
-                    <h2 id="endpoints-GETapi-v1-provincias--idProvincia-">Obtener Provincia</h2>
+            <h2 id="endpoints-GETapi-v1-provincias--idProvincia-">Obtener Provincia</h2>
 
-<p>
-</p>
+            <p>
+            </p>
 
-<p>Obtiene todos los datos de todas las provincias con su relacion con los municipios y sus datos</p>
+            <p>Obtiene todos los datos de todas las provincias con su relacion con los municipios y sus datos</p>
 
-<span id="example-requests-GETapi-v1-provincias--idProvincia-">
-<blockquote>Example request:</blockquote>
+            <span id="example-requests-GETapi-v1-provincias--idProvincia-">
+                <blockquote>Example request:</blockquote>
 
 
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/provincias/molestias" \
+                <div class="bash-example">
+                    <pre><code class="language-bash">curl --request GET \
+    --get "https://cuba-api.onrender.com/api/v1/provincias/corporis" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json"</code></pre>
+                </div>
 
 
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/provincias/molestias"
+                <div class="javascript-example">
+                    <pre><code class="language-javascript">const url = new URL(
+    "https://cuba-api.onrender.com/api/v1/provincias/corporis"
 );
 
 const headers = {
@@ -1458,24 +1459,29 @@ const headers = {
 fetch(url, {
     method: "GET",
     headers,
-}).then(response =&gt; response.json());</code></pre></div>
+}).then(response =&gt; response.json());</code></pre>
+                </div>
 
-</span>
+            </span>
 
-<span id="example-responses-GETapi-v1-provincias--idProvincia-">
-            <blockquote>
-            <p>Example response (500):</p>
-        </blockquote>
+            <span id="example-responses-GETapi-v1-provincias--idProvincia-">
+                <blockquote>
+                    <p>Example response (500):</p>
+                </blockquote>
                 <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
+                    <summary style="cursor: pointer;">
+                        <small
+                            onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show
+                            headers</small>
+                    </summary>
+                    <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
 x-ratelimit-remaining: 57
 access-control-allow-origin: *
- </code></pre></details>         <pre>
+ </code></pre>
+                </details>
+                <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;message&quot;: &quot;App\\Http\\Controllers\\ProvinceController::show(): Argument #1 ($id) must be of type int, string given, called in D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php on line 54&quot;,
@@ -1913,111 +1919,103 @@ access-control-allow-origin: *
     ]
 }</code>
  </pre>
-    </span>
-<span id="execution-results-GETapi-v1-provincias--idProvincia-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-v1-provincias--idProvincia-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-provincias--idProvincia-"
+            </span>
+            <span id="execution-results-GETapi-v1-provincias--idProvincia-" hidden>
+                <blockquote>Received response<span
+                        id="execution-response-status-GETapi-v1-provincias--idProvincia-"></span>:
+                </blockquote>
+                <pre class="json"><code id="execution-response-content-GETapi-v1-provincias--idProvincia-"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-v1-provincias--idProvincia-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-provincias--idProvincia-">
+            </span>
+            <span id="execution-error-GETapi-v1-provincias--idProvincia-" hidden>
+                <blockquote>Request failed with error:</blockquote>
+                <pre><code id="execution-error-message-GETapi-v1-provincias--idProvincia-">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-v1-provincias--idProvincia-" data-method="GET"
-      data-path="api/v1/provincias/{idProvincia}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-provincias--idProvincia-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
+            </span>
+            <form id="form-GETapi-v1-provincias--idProvincia-" data-method="GET"
+                data-path="api/v1/provincias/{idProvincia}" data-authed="0" data-hasfiles="0" data-isarraybody="0"
+                autocomplete="off"
+                onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-provincias--idProvincia-', this);">
+                <h3>
+                    Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-v1-provincias--idProvincia-"
-                    onclick="tryItOut('GETapi-v1-provincias--idProvincia-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-v1-provincias--idProvincia-"
-                    onclick="cancelTryOut('GETapi-v1-provincias--idProvincia-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-v1-provincias--idProvincia-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/v1/provincias/{idProvincia}</code></b>
-        </p>
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-GETapi-v1-provincias--idProvincia-"
+                        onclick="tryItOut('GETapi-v1-provincias--idProvincia-');">Try it out ⚡
+                    </button>
+                    <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-GETapi-v1-provincias--idProvincia-"
+                        onclick="cancelTryOut('GETapi-v1-provincias--idProvincia-');" hidden>Cancel 🛑
+                    </button>&nbsp;&nbsp;
+                    <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-GETapi-v1-provincias--idProvincia-" data-initial-text="Send Request 💥"
+                        data-loading-text="⏱ Sending..." hidden>Send Request 💥
+                    </button>
+                </h3>
+                <p>
+                    <small class="badge badge-green">GET</small>
+                    <b><code>api/v1/provincias/{idProvincia}</code></b>
+                </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-v1-provincias--idProvincia-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-v1-provincias--idProvincia-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>idProvincia</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="idProvincia"                data-endpoint="GETapi-v1-provincias--idProvincia-"
-               value="molestias"
-               data-component="url">
-    <br>
-<p>Example: <code>molestias</code></p>
-            </div>
-                    </form>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Content-Type"
+                        data-endpoint="GETapi-v1-provincias--idProvincia-" value="application/json"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Accept"
+                        data-endpoint="GETapi-v1-provincias--idProvincia-" value="application/json"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>idProvincia</code></b>&nbsp;&nbsp;
+                    <small>string</small>&nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="idProvincia"
+                        data-endpoint="GETapi-v1-provincias--idProvincia-" value="corporis" data-component="url">
+                    <br>
+                    <p>Example: <code>corporis</code></p>
+                </div>
+            </form>
 
-                    <h2 id="endpoints-GETapi-v1-municipios">Obtener  municipios</h2>
+            <h2 id="endpoints-GETapi-v1-municipios">Obtener municipios</h2>
 
-<p>
-</p>
+            <p>
+            </p>
 
-<p>Obtiene todos los datos de todos los municipios</p>
+            <p>Obtiene todos los datos de todos los municipios</p>
 
-<span id="example-requests-GETapi-v1-municipios">
-<blockquote>Example request:</blockquote>
+            <span id="example-requests-GETapi-v1-municipios">
+                <blockquote>Example request:</blockquote>
 
 
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/municipios" \
+                <div class="bash-example">
+                    <pre><code class="language-bash">curl --request GET \
+    --get "https://cuba-api.onrender.com/api/v1/municipios" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json"</code></pre>
+                </div>
 
 
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/municipios"
+                <div class="javascript-example">
+                    <pre><code class="language-javascript">const url = new URL(
+    "https://cuba-api.onrender.com/api/v1/municipios"
 );
 
 const headers = {
@@ -2028,24 +2026,29 @@ const headers = {
 fetch(url, {
     method: "GET",
     headers,
-}).then(response =&gt; response.json());</code></pre></div>
+}).then(response =&gt; response.json());</code></pre>
+                </div>
 
-</span>
+            </span>
 
-<span id="example-responses-GETapi-v1-municipios">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
+            <span id="example-responses-GETapi-v1-municipios">
+                <blockquote>
+                    <p>Example response (200):</p>
+                </blockquote>
                 <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
+                    <summary style="cursor: pointer;">
+                        <small
+                            onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show
+                            headers</small>
+                    </summary>
+                    <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
 x-ratelimit-remaining: 56
 access-control-allow-origin: *
- </code></pre></details>         <pre>
+ </code></pre>
+                </details>
+                <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
@@ -2882,99 +2885,88 @@ access-control-allow-origin: *
     ]
 }</code>
  </pre>
-    </span>
-<span id="execution-results-GETapi-v1-municipios" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-v1-municipios"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-municipios"
+            </span>
+            <span id="execution-results-GETapi-v1-municipios" hidden>
+                <blockquote>Received response<span id="execution-response-status-GETapi-v1-municipios"></span>:
+                </blockquote>
+                <pre class="json"><code id="execution-response-content-GETapi-v1-municipios"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-v1-municipios" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-municipios">
+            </span>
+            <span id="execution-error-GETapi-v1-municipios" hidden>
+                <blockquote>Request failed with error:</blockquote>
+                <pre><code id="execution-error-message-GETapi-v1-municipios">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-v1-municipios" data-method="GET"
-      data-path="api/v1/municipios"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-municipios', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
+            </span>
+            <form id="form-GETapi-v1-municipios" data-method="GET" data-path="api/v1/municipios" data-authed="0"
+                data-hasfiles="0" data-isarraybody="0" autocomplete="off"
+                onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-municipios', this);">
+                <h3>
+                    Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-v1-municipios"
-                    onclick="tryItOut('GETapi-v1-municipios');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-v1-municipios"
-                    onclick="cancelTryOut('GETapi-v1-municipios');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-v1-municipios"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/v1/municipios</code></b>
-        </p>
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-GETapi-v1-municipios" onclick="tryItOut('GETapi-v1-municipios');">Try it out ⚡
+                    </button>
+                    <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-GETapi-v1-municipios" onclick="cancelTryOut('GETapi-v1-municipios');"
+                        hidden>Cancel 🛑
+                    </button>&nbsp;&nbsp;
+                    <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-GETapi-v1-municipios" data-initial-text="Send Request 💥"
+                        data-loading-text="⏱ Sending..." hidden>Send Request 💥
+                    </button>
+                </h3>
+                <p>
+                    <small class="badge badge-green">GET</small>
+                    <b><code>api/v1/municipios</code></b>
+                </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-v1-municipios"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-v1-municipios"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        </form>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Content-Type" data-endpoint="GETapi-v1-municipios"
+                        value="application/json" data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Accept" data-endpoint="GETapi-v1-municipios"
+                        value="application/json" data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+            </form>
 
-                    <h2 id="endpoints-GETapi-v1-municipios--idMunicipio-">Obtener Municipio</h2>
+            <h2 id="endpoints-GETapi-v1-municipios--idMunicipio-">Obtener Municipio</h2>
 
-<p>
-</p>
+            <p>
+            </p>
 
-<p>Obtiene todos los datos de un municipio</p>
+            <p>Obtiene todos los datos de un municipio</p>
 
-<span id="example-requests-GETapi-v1-municipios--idMunicipio-">
-<blockquote>Example request:</blockquote>
+            <span id="example-requests-GETapi-v1-municipios--idMunicipio-">
+                <blockquote>Example request:</blockquote>
 
 
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/municipios/quia" \
+                <div class="bash-example">
+                    <pre><code class="language-bash">curl --request GET \
+    --get "https://cuba-api.onrender.com/api/v1/municipios/ut" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json"</code></pre>
+                </div>
 
 
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/municipios/quia"
+                <div class="javascript-example">
+                    <pre><code class="language-javascript">const url = new URL(
+    "https://cuba-api.onrender.com/api/v1/municipios/ut"
 );
 
 const headers = {
@@ -2985,24 +2977,29 @@ const headers = {
 fetch(url, {
     method: "GET",
     headers,
-}).then(response =&gt; response.json());</code></pre></div>
+}).then(response =&gt; response.json());</code></pre>
+                </div>
 
-</span>
+            </span>
 
-<span id="example-responses-GETapi-v1-municipios--idMunicipio-">
-            <blockquote>
-            <p>Example response (500):</p>
-        </blockquote>
+            <span id="example-responses-GETapi-v1-municipios--idMunicipio-">
+                <blockquote>
+                    <p>Example response (500):</p>
+                </blockquote>
                 <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
+                    <summary style="cursor: pointer;">
+                        <small
+                            onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show
+                            headers</small>
+                    </summary>
+                    <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
 x-ratelimit-remaining: 55
 access-control-allow-origin: *
- </code></pre></details>         <pre>
+ </code></pre>
+                </details>
+                <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;message&quot;: &quot;App\\Http\\Controllers\\MunicipalityController::show(): Argument #1 ($id) must be of type int, string given, called in D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php on line 54&quot;,
@@ -3440,100 +3437,92 @@ access-control-allow-origin: *
     ]
 }</code>
  </pre>
-    </span>
-<span id="execution-results-GETapi-v1-municipios--idMunicipio-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-v1-municipios--idMunicipio-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-municipios--idMunicipio-"
+            </span>
+            <span id="execution-results-GETapi-v1-municipios--idMunicipio-" hidden>
+                <blockquote>Received response<span
+                        id="execution-response-status-GETapi-v1-municipios--idMunicipio-"></span>:
+                </blockquote>
+                <pre class="json"><code id="execution-response-content-GETapi-v1-municipios--idMunicipio-"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-v1-municipios--idMunicipio-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-municipios--idMunicipio-">
+            </span>
+            <span id="execution-error-GETapi-v1-municipios--idMunicipio-" hidden>
+                <blockquote>Request failed with error:</blockquote>
+                <pre><code id="execution-error-message-GETapi-v1-municipios--idMunicipio-">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-v1-municipios--idMunicipio-" data-method="GET"
-      data-path="api/v1/municipios/{idMunicipio}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-municipios--idMunicipio-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
+            </span>
+            <form id="form-GETapi-v1-municipios--idMunicipio-" data-method="GET"
+                data-path="api/v1/municipios/{idMunicipio}" data-authed="0" data-hasfiles="0" data-isarraybody="0"
+                autocomplete="off"
+                onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-municipios--idMunicipio-', this);">
+                <h3>
+                    Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-v1-municipios--idMunicipio-"
-                    onclick="tryItOut('GETapi-v1-municipios--idMunicipio-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-v1-municipios--idMunicipio-"
-                    onclick="cancelTryOut('GETapi-v1-municipios--idMunicipio-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-v1-municipios--idMunicipio-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/v1/municipios/{idMunicipio}</code></b>
-        </p>
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-GETapi-v1-municipios--idMunicipio-"
+                        onclick="tryItOut('GETapi-v1-municipios--idMunicipio-');">Try it out ⚡
+                    </button>
+                    <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-GETapi-v1-municipios--idMunicipio-"
+                        onclick="cancelTryOut('GETapi-v1-municipios--idMunicipio-');" hidden>Cancel 🛑
+                    </button>&nbsp;&nbsp;
+                    <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-GETapi-v1-municipios--idMunicipio-" data-initial-text="Send Request 💥"
+                        data-loading-text="⏱ Sending..." hidden>Send Request 💥
+                    </button>
+                </h3>
+                <p>
+                    <small class="badge badge-green">GET</small>
+                    <b><code>api/v1/municipios/{idMunicipio}</code></b>
+                </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-v1-municipios--idMunicipio-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-v1-municipios--idMunicipio-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>idMunicipio</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="idMunicipio"                data-endpoint="GETapi-v1-municipios--idMunicipio-"
-               value="quia"
-               data-component="url">
-    <br>
-<p>Example: <code>quia</code></p>
-            </div>
-                    </form>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Content-Type"
+                        data-endpoint="GETapi-v1-municipios--idMunicipio-" value="application/json"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Accept"
+                        data-endpoint="GETapi-v1-municipios--idMunicipio-" value="application/json"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>idMunicipio</code></b>&nbsp;&nbsp;
+                    <small>string</small>&nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="idMunicipio"
+                        data-endpoint="GETapi-v1-municipios--idMunicipio-" value="ut" data-component="url">
+                    <br>
+                    <p>Example: <code>ut</code></p>
+                </div>
+            </form>
 
-            
 
-        
+
+
+        </div>
+        <div class="dark-box">
+            <div class="lang-selector">
+                <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+            </div>
+        </div>
     </div>
-    <div class="dark-box">
-                    <div class="lang-selector">
-                                                        <button type="button" class="lang-button" data-language-name="bash">bash</button>
-                                                        <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
-                            </div>
-            </div>
-</div>
 </body>
+
 </html>

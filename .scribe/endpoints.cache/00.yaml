@@ -106,12 +106,12 @@ endpoints:
         name: idProvincia
         description: ''
         required: true
-        example: molestias
+        example: corporis
         type: string
         enumValues: []
         custom: []
     cleanUrlParameters:
-      idProvincia: molestias
+      idProvincia: corporis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -632,12 +632,12 @@ endpoints:
         name: idMunicipio
         description: ''
         required: true
-        example: quia
+        example: ut
         type: string
         enumValues: []
         custom: []
     cleanUrlParameters:
-      idMunicipio: quia
+      idMunicipio: ut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
