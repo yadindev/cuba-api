@@ -24,8 +24,8 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Gate::define('viewApiDocs', function () {
-           return true; 
-        });
+        // Gate::define('viewApiDocs', function () {
+        //    return true; 
+        // });
     }
 }
