@@ -6,10 +6,9 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 
-
 /**
  * @OA\Info(
- *             title="Cuba-api", 
+ *             title="Cuba-api",
  *             version="1.0",
  *             description="Api para consultar la division administrativa de Cuba"
  * )

@@ -2,9 +2,6 @@
 
 use App\Http\Controllers\MunicipalityController;
 use App\Http\Controllers\ProvinceController;
-use App\Http\Resources\ProvinceCollection;
-use App\Models\Province;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,16 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
 Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers'], function () {
-  /* Rutas de provincias */
-  Route::get('/provincias-municipios', [ProvinceController::class, 'all']);
-  Route::get('/provincias', [ProvinceController::class, 'index']);
-  Route::get('/provincias/{idProvincia}', [ProvinceController::class, 'show']);
+    /* Rutas de provincias */
+    Route::get('/provincias-municipios', [ProvinceController::class, 'all']);
+    Route::get('/provincias', [ProvinceController::class, 'index']);
+    Route::get('/provincias/{idProvincia}', [ProvinceController::class, 'show']);
 
-  /* Rutas de municipios */
-  Route::get('/municipios', [MunicipalityController::class, 'index']);
-  Route::get('/municipios/{idMunicipio}', [MunicipalityController::class, 'show']);
+    /* Rutas de municipios */
+    Route::get('/municipios', [MunicipalityController::class, 'index']);
+    Route::get('/municipios/{idMunicipio}', [MunicipalityController::class, 'show']);
 
 });

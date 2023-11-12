@@ -17,7 +17,7 @@ class MunicipalityResource extends JsonResource
         return [
             'id_municipio' => $this->id,
             'nombre_municipio' => $this->name,
-            'es_cabecera_provincial' => $this->province_capital 
+            'es_cabecera_provincial' => $this->province_capital,
         ];
     }
 }

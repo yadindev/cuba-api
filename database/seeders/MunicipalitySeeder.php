@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Municipality;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class MunicipalitySeeder extends Seeder
@@ -24,7 +23,7 @@ class MunicipalitySeeder extends Seeder
             [
                 'name' => 'Artemisa',
                 'province_id' => 1,
-                'province_capital' => true
+                'province_capital' => true,
             ]
         );
         Municipality::create(
@@ -87,7 +86,7 @@ class MunicipalitySeeder extends Seeder
             [
                 'name' => 'Camagüey',
                 'province_id' => 2,
-                'province_capital' => true
+                'province_capital' => true,
             ]
         );
         Municipality::create(
@@ -170,7 +169,7 @@ class MunicipalitySeeder extends Seeder
             [
                 'name' => 'Ciego de Ávila',
                 'province_id' => 3,
-                'province_capital' => true
+                'province_capital' => true,
             ]
         );
         Municipality::create(
@@ -236,7 +235,7 @@ class MunicipalitySeeder extends Seeder
             [
                 'name' => 'Cienfuegos',
                 'province_id' => 4,
-                'province_capital' => true
+                'province_capital' => true,
             ]
         );
         Municipality::create(
@@ -283,7 +282,7 @@ class MunicipalitySeeder extends Seeder
             [
                 'name' => 'Bayamo',
                 'province_id' => 5,
-                'province_capital' => true
+                'province_capital' => true,
             ]
         );
         Municipality::create(
@@ -365,7 +364,7 @@ class MunicipalitySeeder extends Seeder
             [
                 'name' => 'Guantánamo',
                 'province_id' => 6,
-                'province_capital' => true
+                'province_capital' => true,
             ]
         );
         Municipality::create(
@@ -429,7 +428,7 @@ class MunicipalitySeeder extends Seeder
             [
                 'name' => 'Holguín',
                 'province_id' => 7,
-                'province_capital' => true
+                'province_capital' => true,
             ]
         );
         Municipality::create(
@@ -517,7 +516,7 @@ class MunicipalitySeeder extends Seeder
             [
                 'name' => 'Plaza',
                 'province_id' => 8,
-                'province_capital' => true
+                'province_capital' => true,
             ]
         );
         Municipality::create(
@@ -610,7 +609,7 @@ class MunicipalitySeeder extends Seeder
             [
                 'name' => 'Las Tunas',
                 'province_id' => 9,
-                'province_capital' => true
+                'province_capital' => true,
             ]
         );
         Municipality::create(
@@ -661,7 +660,7 @@ class MunicipalitySeeder extends Seeder
             [
                 'name' => 'Matanzas',
                 'province_id' => 10,
-                'province_capital' => true
+                'province_capital' => true,
             ]
         );
         Municipality::create(
@@ -742,7 +741,7 @@ class MunicipalitySeeder extends Seeder
             [
                 'name' => 'San José de las Lajas',
                 'province_id' => 11,
-                'province_capital' => true
+                'province_capital' => true,
             ]
         );
         Municipality::create(
@@ -811,7 +810,7 @@ class MunicipalitySeeder extends Seeder
             [
                 'name' => 'Pinar del Río',
                 'province_id' => 12,
-                'province_capital' => true
+                'province_capital' => true,
             ]
         );
         Municipality::create(
@@ -880,7 +879,7 @@ class MunicipalitySeeder extends Seeder
             [
                 'name' => 'Sancti Spíritus',
                 'province_id' => 13,
-                'province_capital' => true
+                'province_capital' => true,
             ]
         );
         Municipality::create(
@@ -931,7 +930,7 @@ class MunicipalitySeeder extends Seeder
             [
                 'name' => 'Santiago de Cuba',
                 'province_id' => 14,
-                'province_capital' => true
+                'province_capital' => true,
             ]
         );
         Municipality::create(
@@ -988,7 +987,7 @@ class MunicipalitySeeder extends Seeder
             [
                 'name' => 'Santa Clara',
                 'province_id' => 15,
-                'province_capital' => true
+                'province_capital' => true,
             ]
         );
         Municipality::create(
