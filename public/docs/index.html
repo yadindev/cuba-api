@@ -1,0 +1,3539 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Cuba-api</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../docs/css/theme-default.style.css" media="screen">
+    <link rel="stylesheet" href="../docs/css/theme-default.print.css" media="print">
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/obsidian.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jets/0.14.1/jets.min.js"></script>
+
+    <style id="language-style">
+        /* starts out as display none and is replaced with js later  */
+                    body .content .bash-example code { display: none; }
+                    body .content .javascript-example code { display: none; }
+            </style>
+
+    <script>
+        var tryItOutBaseUrl = "http://localhost";
+        var useCsrf = Boolean();
+        var csrfUrl = "/sanctum/csrf-cookie";
+    </script>
+    <script src="../docs/js/tryitout-4.25.0.js"></script>
+
+    <script src="../docs/js/theme-default-4.25.0.js"></script>
+
+</head>
+
+<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;]">
+
+<a href="#" id="nav-button">
+    <span>
+        MENU
+        <img src="../docs/images/navbar.png" alt="navbar-image"/>
+    </span>
+</a>
+<div class="tocify-wrapper">
+    
+            <div class="lang-selector">
+                                            <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                            <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                    </div>
+    
+    <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+
+    <div id="toc">
+                    <ul id="tocify-header-introduction" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="introduction">
+                    <a href="#introduction">Introduction</a>
+                </li>
+                            </ul>
+                    <ul id="tocify-header-authenticating-requests" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="authenticating-requests">
+                    <a href="#authenticating-requests">Authenticating requests</a>
+                </li>
+                            </ul>
+                    <ul id="tocify-header-endpoints" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="endpoints">
+                    <a href="#endpoints">Endpoints</a>
+                </li>
+                                    <ul id="tocify-subheader-endpoints" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-provincias-municipios">
+                                <a href="#endpoints-GETapi-v1-provincias-municipios">Obtener todas las provincias y sus municipios</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-provincias">
+                                <a href="#endpoints-GETapi-v1-provincias">Obtener todas las provincias</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-provincias--idProvincia-">
+                                <a href="#endpoints-GETapi-v1-provincias--idProvincia-">Obtener Provincia</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-municipios">
+                                <a href="#endpoints-GETapi-v1-municipios">Obtener  municipios</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-municipios--idMunicipio-">
+                                <a href="#endpoints-GETapi-v1-municipios--idMunicipio-">Obtener Municipio</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+            </div>
+
+    <ul class="toc-footer" id="toc-footer">
+                    <li style="padding-bottom: 5px;"><a href="../docs/collection.json">View Postman collection</a></li>
+                            <li style="padding-bottom: 5px;"><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
+                <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+    </ul>
+
+    <ul class="toc-footer" id="last-updated">
+        <li>Last updated: November 12, 2023</li>
+    </ul>
+</div>
+
+<div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+        <h1 id="introduction">Introduction</h1>
+<p>Api para la consulta de la distribucion de cuba</p>
+<aside>
+    <strong>Base URL</strong>: <code>http://localhost</code>
+</aside>
+<p>This documentation aims to provide all the information you need to work with our API.</p>
+<aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
+You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
+
+        <h1 id="authenticating-requests">Authenticating requests</h1>
+<p>This API is not authenticated.</p>
+
+        <h1 id="endpoints">Endpoints</h1>
+
+    
+
+                                <h2 id="endpoints-GETapi-v1-provincias-municipios">Obtener todas las provincias y sus municipios</h2>
+
+<p>
+</p>
+
+<p>Obtiene todos los datos de todas las provincias con su relacion con los municipios y sus datos</p>
+
+<span id="example-requests-GETapi-v1-provincias-municipios">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/provincias-municipios" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/provincias-municipios"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-provincias-municipios">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 59
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;nombre&quot;: &quot;Artemisa&quot;,
+            &quot;acronimo&quot;: &quot;ART&quot;,
+            &quot;es_capital&quot;: 0,
+            &quot;municipios&quot;: [
+                {
+                    &quot;id_municipio&quot;: 1,
+                    &quot;nombre_municipio&quot;: &quot;Alquizar&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 2,
+                    &quot;nombre_municipio&quot;: &quot;Artemisa&quot;,
+                    &quot;es_cabecera_provincial&quot;: 1
+                },
+                {
+                    &quot;id_municipio&quot;: 3,
+                    &quot;nombre_municipio&quot;: &quot;Bauta&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 4,
+                    &quot;nombre_municipio&quot;: &quot;Caimito&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 5,
+                    &quot;nombre_municipio&quot;: &quot;Guanajay&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 6,
+                    &quot;nombre_municipio&quot;: &quot;G&uuml;ira de Melena&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 7,
+                    &quot;nombre_municipio&quot;: &quot;Mariel&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 8,
+                    &quot;nombre_municipio&quot;: &quot;San Antonio de los Ba&ntilde;os&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 9,
+                    &quot;nombre_municipio&quot;: &quot;Bah&iacute;a Honda&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 10,
+                    &quot;nombre_municipio&quot;: &quot;San Crist&oacute;bal&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 11,
+                    &quot;nombre_municipio&quot;: &quot;Candelaria&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 2,
+            &quot;nombre&quot;: &quot;Camag&uuml;ey&quot;,
+            &quot;acronimo&quot;: &quot;CMG&quot;,
+            &quot;es_capital&quot;: 0,
+            &quot;municipios&quot;: [
+                {
+                    &quot;id_municipio&quot;: 12,
+                    &quot;nombre_municipio&quot;: &quot;Camag&uuml;ey&quot;,
+                    &quot;es_cabecera_provincial&quot;: 1
+                },
+                {
+                    &quot;id_municipio&quot;: 13,
+                    &quot;nombre_municipio&quot;: &quot;Carlos Manuel de C&eacute;spedes&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 14,
+                    &quot;nombre_municipio&quot;: &quot;Esmeralda&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 15,
+                    &quot;nombre_municipio&quot;: &quot;Florida&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 16,
+                    &quot;nombre_municipio&quot;: &quot;Guaimaro&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 17,
+                    &quot;nombre_municipio&quot;: &quot;Jimag&uuml;ay&uacute;&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 18,
+                    &quot;nombre_municipio&quot;: &quot;Minas&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 19,
+                    &quot;nombre_municipio&quot;: &quot;Najasa&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 20,
+                    &quot;nombre_municipio&quot;: &quot;Nuevitas&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 21,
+                    &quot;nombre_municipio&quot;: &quot;Santa Cruz del Sur&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 22,
+                    &quot;nombre_municipio&quot;: &quot;Sibanic&uacute;&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 23,
+                    &quot;nombre_municipio&quot;: &quot;Sierra de Cubitas&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 24,
+                    &quot;nombre_municipio&quot;: &quot;Vertientes&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 3,
+            &quot;nombre&quot;: &quot;Ciego de &Aacute;vila&quot;,
+            &quot;acronimo&quot;: &quot;CAV&quot;,
+            &quot;es_capital&quot;: 0,
+            &quot;municipios&quot;: [
+                {
+                    &quot;id_municipio&quot;: 25,
+                    &quot;nombre_municipio&quot;: &quot;Ciego de &Aacute;vila&quot;,
+                    &quot;es_cabecera_provincial&quot;: 1
+                },
+                {
+                    &quot;id_municipio&quot;: 26,
+                    &quot;nombre_municipio&quot;: &quot;Ciro Redondo&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 27,
+                    &quot;nombre_municipio&quot;: &quot;Baragu&aacute;&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 28,
+                    &quot;nombre_municipio&quot;: &quot;Bolivia&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 29,
+                    &quot;nombre_municipio&quot;: &quot;Chambas&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 30,
+                    &quot;nombre_municipio&quot;: &quot;Florencia&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 31,
+                    &quot;nombre_municipio&quot;: &quot;Majagua&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 32,
+                    &quot;nombre_municipio&quot;: &quot;Mor&oacute;n&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 33,
+                    &quot;nombre_municipio&quot;: &quot;Primero de Enero&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 34,
+                    &quot;nombre_municipio&quot;: &quot;Venezuela&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 4,
+            &quot;nombre&quot;: &quot;Cienfuegos&quot;,
+            &quot;acronimo&quot;: &quot;CFG&quot;,
+            &quot;es_capital&quot;: 0,
+            &quot;municipios&quot;: [
+                {
+                    &quot;id_municipio&quot;: 35,
+                    &quot;nombre_municipio&quot;: &quot;Cienfuegos&quot;,
+                    &quot;es_cabecera_provincial&quot;: 1
+                },
+                {
+                    &quot;id_municipio&quot;: 36,
+                    &quot;nombre_municipio&quot;: &quot;Aguada de Pasajeros&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 37,
+                    &quot;nombre_municipio&quot;: &quot;Cruces&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 38,
+                    &quot;nombre_municipio&quot;: &quot;Cumanayagua&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 39,
+                    &quot;nombre_municipio&quot;: &quot;Palmira&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 40,
+                    &quot;nombre_municipio&quot;: &quot;Rodas&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 41,
+                    &quot;nombre_municipio&quot;: &quot;Santa Isabel de las Lajas&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 5,
+            &quot;nombre&quot;: &quot;Granma&quot;,
+            &quot;acronimo&quot;: &quot;GRM&quot;,
+            &quot;es_capital&quot;: 0,
+            &quot;municipios&quot;: [
+                {
+                    &quot;id_municipio&quot;: 42,
+                    &quot;nombre_municipio&quot;: &quot;Bayamo&quot;,
+                    &quot;es_cabecera_provincial&quot;: 1
+                },
+                {
+                    &quot;id_municipio&quot;: 43,
+                    &quot;nombre_municipio&quot;: &quot;Bartolom&eacute; Mas&oacute;&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 44,
+                    &quot;nombre_municipio&quot;: &quot;Buey Arriba&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 45,
+                    &quot;nombre_municipio&quot;: &quot;Campechuela&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 46,
+                    &quot;nombre_municipio&quot;: &quot;Cauto Cristo&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 47,
+                    &quot;nombre_municipio&quot;: &quot;Guisa&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 48,
+                    &quot;nombre_municipio&quot;: &quot;Jiguan&iacute;&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 49,
+                    &quot;nombre_municipio&quot;: &quot;Manzanillo&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 50,
+                    &quot;nombre_municipio&quot;: &quot;Media Luna&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 51,
+                    &quot;nombre_municipio&quot;: &quot;Niquero&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 52,
+                    &quot;nombre_municipio&quot;: &quot;Pil&oacute;n&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 53,
+                    &quot;nombre_municipio&quot;: &quot;R&iacute;o Cauto&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 54,
+                    &quot;nombre_municipio&quot;: &quot;Yara&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 6,
+            &quot;nombre&quot;: &quot;Guant&aacute;namo&quot;,
+            &quot;acronimo&quot;: &quot;GTM&quot;,
+            &quot;es_capital&quot;: 0,
+            &quot;municipios&quot;: [
+                {
+                    &quot;id_municipio&quot;: 55,
+                    &quot;nombre_municipio&quot;: &quot;Guant&aacute;namo&quot;,
+                    &quot;es_cabecera_provincial&quot;: 1
+                },
+                {
+                    &quot;id_municipio&quot;: 56,
+                    &quot;nombre_municipio&quot;: &quot;Baracoa&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 57,
+                    &quot;nombre_municipio&quot;: &quot;Caimanera&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 58,
+                    &quot;nombre_municipio&quot;: &quot;El Salvador&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 59,
+                    &quot;nombre_municipio&quot;: &quot;Im&iacute;as&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 60,
+                    &quot;nombre_municipio&quot;: &quot;Mais&iacute;&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 61,
+                    &quot;nombre_municipio&quot;: &quot;Manuel Tames&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 62,
+                    &quot;nombre_municipio&quot;: &quot;Niceto P&eacute;rez&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 63,
+                    &quot;nombre_municipio&quot;: &quot;San Antonio del Sur&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 64,
+                    &quot;nombre_municipio&quot;: &quot;Yateras&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 7,
+            &quot;nombre&quot;: &quot;Holgu&iacute;n&quot;,
+            &quot;acronimo&quot;: &quot;HOL&quot;,
+            &quot;es_capital&quot;: 0,
+            &quot;municipios&quot;: [
+                {
+                    &quot;id_municipio&quot;: 65,
+                    &quot;nombre_municipio&quot;: &quot;Holgu&iacute;n&quot;,
+                    &quot;es_cabecera_provincial&quot;: 1
+                },
+                {
+                    &quot;id_municipio&quot;: 66,
+                    &quot;nombre_municipio&quot;: &quot;Antilla&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 67,
+                    &quot;nombre_municipio&quot;: &quot;B&aacute;guanos&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 68,
+                    &quot;nombre_municipio&quot;: &quot;Banes&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 69,
+                    &quot;nombre_municipio&quot;: &quot;Cacocum&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 70,
+                    &quot;nombre_municipio&quot;: &quot;Calixto Garc&iacute;a&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 71,
+                    &quot;nombre_municipio&quot;: &quot;Cueto&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 72,
+                    &quot;nombre_municipio&quot;: &quot;Frank Pa&iacute;s&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 73,
+                    &quot;nombre_municipio&quot;: &quot;Gibara&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 74,
+                    &quot;nombre_municipio&quot;: &quot;Mayar&iacute;&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 75,
+                    &quot;nombre_municipio&quot;: &quot;Moa&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 76,
+                    &quot;nombre_municipio&quot;: &quot;Rafael Freyre&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 77,
+                    &quot;nombre_municipio&quot;: &quot;Sagua de T&aacute;namo&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 78,
+                    &quot;nombre_municipio&quot;: &quot;Urbano Noris&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 8,
+            &quot;nombre&quot;: &quot;La Habana&quot;,
+            &quot;acronimo&quot;: &quot;LHA&quot;,
+            &quot;es_capital&quot;: 1,
+            &quot;municipios&quot;: [
+                {
+                    &quot;id_municipio&quot;: 79,
+                    &quot;nombre_municipio&quot;: &quot;Plaza&quot;,
+                    &quot;es_cabecera_provincial&quot;: 1
+                },
+                {
+                    &quot;id_municipio&quot;: 80,
+                    &quot;nombre_municipio&quot;: &quot;Arroyo Naranjo&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 81,
+                    &quot;nombre_municipio&quot;: &quot;Boyeros&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 82,
+                    &quot;nombre_municipio&quot;: &quot;Cerro&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 83,
+                    &quot;nombre_municipio&quot;: &quot;Cotorro&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 84,
+                    &quot;nombre_municipio&quot;: &quot;Diez de Octubre&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 85,
+                    &quot;nombre_municipio&quot;: &quot;Guanabacoa&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 86,
+                    &quot;nombre_municipio&quot;: &quot;Habana del Este&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 87,
+                    &quot;nombre_municipio&quot;: &quot;Habana Vieja&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 88,
+                    &quot;nombre_municipio&quot;: &quot;La Lisa&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 89,
+                    &quot;nombre_municipio&quot;: &quot;Marianao&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 90,
+                    &quot;nombre_municipio&quot;: &quot;Playa&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 91,
+                    &quot;nombre_municipio&quot;: &quot;Regla&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 92,
+                    &quot;nombre_municipio&quot;: &quot;San Miguel del Padr&oacute;n&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 93,
+                    &quot;nombre_municipio&quot;: &quot;Centro Habana&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 9,
+            &quot;nombre&quot;: &quot;Las Tunas&quot;,
+            &quot;acronimo&quot;: &quot;LTN&quot;,
+            &quot;es_capital&quot;: 0,
+            &quot;municipios&quot;: [
+                {
+                    &quot;id_municipio&quot;: 94,
+                    &quot;nombre_municipio&quot;: &quot;Las Tunas&quot;,
+                    &quot;es_cabecera_provincial&quot;: 1
+                },
+                {
+                    &quot;id_municipio&quot;: 95,
+                    &quot;nombre_municipio&quot;: &quot;Amancio Rodr&iacute;guez&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 96,
+                    &quot;nombre_municipio&quot;: &quot;Colombia&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 97,
+                    &quot;nombre_municipio&quot;: &quot;Jes&uacute;s Men&eacute;ndez&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 98,
+                    &quot;nombre_municipio&quot;: &quot;Jobabo&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 99,
+                    &quot;nombre_municipio&quot;: &quot;Majibacoa&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 100,
+                    &quot;nombre_municipio&quot;: &quot;Manat&iacute;&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 101,
+                    &quot;nombre_municipio&quot;: &quot;Puerto Padre&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 10,
+            &quot;nombre&quot;: &quot;Matanzas&quot;,
+            &quot;acronimo&quot;: &quot;MTZ&quot;,
+            &quot;es_capital&quot;: 0,
+            &quot;municipios&quot;: [
+                {
+                    &quot;id_municipio&quot;: 102,
+                    &quot;nombre_municipio&quot;: &quot;Matanzas&quot;,
+                    &quot;es_cabecera_provincial&quot;: 1
+                },
+                {
+                    &quot;id_municipio&quot;: 103,
+                    &quot;nombre_municipio&quot;: &quot;Calimete&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 104,
+                    &quot;nombre_municipio&quot;: &quot;C&aacute;rdenas&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 105,
+                    &quot;nombre_municipio&quot;: &quot;Ci&eacute;naga de Zapata&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 106,
+                    &quot;nombre_municipio&quot;: &quot;Col&oacute;n&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 107,
+                    &quot;nombre_municipio&quot;: &quot;Jag&uuml;ey Grande&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 108,
+                    &quot;nombre_municipio&quot;: &quot;Jovellanos&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 109,
+                    &quot;nombre_municipio&quot;: &quot;Limonar&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 110,
+                    &quot;nombre_municipio&quot;: &quot;Los Arabos&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 111,
+                    &quot;nombre_municipio&quot;: &quot;Mart&iacute;&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 112,
+                    &quot;nombre_municipio&quot;: &quot;Pedro Betancourt&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 113,
+                    &quot;nombre_municipio&quot;: &quot;Perico&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 114,
+                    &quot;nombre_municipio&quot;: &quot;Uni&oacute;n de Reyes&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 11,
+            &quot;nombre&quot;: &quot;Mayabeque&quot;,
+            &quot;acronimo&quot;: &quot;MAY&quot;,
+            &quot;es_capital&quot;: 0,
+            &quot;municipios&quot;: [
+                {
+                    &quot;id_municipio&quot;: 115,
+                    &quot;nombre_municipio&quot;: &quot;San Jos&eacute; de las Lajas&quot;,
+                    &quot;es_cabecera_provincial&quot;: 1
+                },
+                {
+                    &quot;id_municipio&quot;: 116,
+                    &quot;nombre_municipio&quot;: &quot;Bataban&oacute;&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 117,
+                    &quot;nombre_municipio&quot;: &quot;Bejucal&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 118,
+                    &quot;nombre_municipio&quot;: &quot;G&uuml;ines&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 119,
+                    &quot;nombre_municipio&quot;: &quot;Jaruco&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 120,
+                    &quot;nombre_municipio&quot;: &quot;Madruga&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 121,
+                    &quot;nombre_municipio&quot;: &quot;Melena del Sur&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 122,
+                    &quot;nombre_municipio&quot;: &quot;Nueva Paz&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 123,
+                    &quot;nombre_municipio&quot;: &quot;Quivic&aacute;n&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 124,
+                    &quot;nombre_municipio&quot;: &quot;San Nicol&aacute;s de Bari&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 125,
+                    &quot;nombre_municipio&quot;: &quot;Santa Cruz del Norte&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 12,
+            &quot;nombre&quot;: &quot;Pinar del R&iacute;o&quot;,
+            &quot;acronimo&quot;: &quot;PNR&quot;,
+            &quot;es_capital&quot;: 0,
+            &quot;municipios&quot;: [
+                {
+                    &quot;id_municipio&quot;: 126,
+                    &quot;nombre_municipio&quot;: &quot;Pinar del R&iacute;o&quot;,
+                    &quot;es_cabecera_provincial&quot;: 1
+                },
+                {
+                    &quot;id_municipio&quot;: 127,
+                    &quot;nombre_municipio&quot;: &quot;Consolaci&oacute;n del Sur&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 128,
+                    &quot;nombre_municipio&quot;: &quot;Guane&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 129,
+                    &quot;nombre_municipio&quot;: &quot;La Palma&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 130,
+                    &quot;nombre_municipio&quot;: &quot;Los Palacios&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 131,
+                    &quot;nombre_municipio&quot;: &quot;Mantua&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 132,
+                    &quot;nombre_municipio&quot;: &quot;Minas de Matahambre&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 133,
+                    &quot;nombre_municipio&quot;: &quot;San Juan y Mart&iacute;nez&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 134,
+                    &quot;nombre_municipio&quot;: &quot;San Luis&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 135,
+                    &quot;nombre_municipio&quot;: &quot;Sandino&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 136,
+                    &quot;nombre_municipio&quot;: &quot;Vi&ntilde;ales&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 13,
+            &quot;nombre&quot;: &quot;Sancti Sp&iacute;ritus&quot;,
+            &quot;acronimo&quot;: &quot;SSP&quot;,
+            &quot;es_capital&quot;: 0,
+            &quot;municipios&quot;: [
+                {
+                    &quot;id_municipio&quot;: 137,
+                    &quot;nombre_municipio&quot;: &quot;Sancti Sp&iacute;ritus&quot;,
+                    &quot;es_cabecera_provincial&quot;: 1
+                },
+                {
+                    &quot;id_municipio&quot;: 138,
+                    &quot;nombre_municipio&quot;: &quot;Cabaig&uacute;an&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 139,
+                    &quot;nombre_municipio&quot;: &quot;Fomento&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 140,
+                    &quot;nombre_municipio&quot;: &quot;Jatibonico&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 141,
+                    &quot;nombre_municipio&quot;: &quot;La Sierpe&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 142,
+                    &quot;nombre_municipio&quot;: &quot;Taguasco&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 143,
+                    &quot;nombre_municipio&quot;: &quot;Trinidad&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 144,
+                    &quot;nombre_municipio&quot;: &quot;Yaguajay&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 14,
+            &quot;nombre&quot;: &quot;Santiago de Cuba&quot;,
+            &quot;acronimo&quot;: &quot;SCU&quot;,
+            &quot;es_capital&quot;: 0,
+            &quot;municipios&quot;: [
+                {
+                    &quot;id_municipio&quot;: 145,
+                    &quot;nombre_municipio&quot;: &quot;Santiago de Cuba&quot;,
+                    &quot;es_cabecera_provincial&quot;: 1
+                },
+                {
+                    &quot;id_municipio&quot;: 146,
+                    &quot;nombre_municipio&quot;: &quot;Contramaestre&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 147,
+                    &quot;nombre_municipio&quot;: &quot;Guam&aacute;&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 148,
+                    &quot;nombre_municipio&quot;: &quot;Julio Antonio Mella&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 149,
+                    &quot;nombre_municipio&quot;: &quot;Palma Soriano&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 150,
+                    &quot;nombre_municipio&quot;: &quot;San Luis&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 151,
+                    &quot;nombre_municipio&quot;: &quot;Segundo Frente&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 152,
+                    &quot;nombre_municipio&quot;: &quot;Songo la Maya&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 153,
+                    &quot;nombre_municipio&quot;: &quot;Tercer Frente&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 15,
+            &quot;nombre&quot;: &quot;Villa Clara&quot;,
+            &quot;acronimo&quot;: &quot;VCL&quot;,
+            &quot;es_capital&quot;: 0,
+            &quot;municipios&quot;: [
+                {
+                    &quot;id_municipio&quot;: 154,
+                    &quot;nombre_municipio&quot;: &quot;Santa Clara&quot;,
+                    &quot;es_cabecera_provincial&quot;: 1
+                },
+                {
+                    &quot;id_municipio&quot;: 155,
+                    &quot;nombre_municipio&quot;: &quot;Caibari&eacute;n&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 156,
+                    &quot;nombre_municipio&quot;: &quot;Camajuan&iacute;&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 157,
+                    &quot;nombre_municipio&quot;: &quot;Cifuentes&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 158,
+                    &quot;nombre_municipio&quot;: &quot;Corralillo&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 159,
+                    &quot;nombre_municipio&quot;: &quot;Encrucijada&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 160,
+                    &quot;nombre_municipio&quot;: &quot;Manicaragua&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 161,
+                    &quot;nombre_municipio&quot;: &quot;Placetas&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 162,
+                    &quot;nombre_municipio&quot;: &quot;Quemado de G&uuml;ines&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 163,
+                    &quot;nombre_municipio&quot;: &quot;Ranchuelo&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 164,
+                    &quot;nombre_municipio&quot;: &quot;Sagua la Grande&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 165,
+                    &quot;nombre_municipio&quot;: &quot;Santo Domingo&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                },
+                {
+                    &quot;id_municipio&quot;: 166,
+                    &quot;nombre_municipio&quot;: &quot;Remedios&quot;,
+                    &quot;es_cabecera_provincial&quot;: 0
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 16,
+            &quot;nombre&quot;: &quot;Isla de la Juventud&quot;,
+            &quot;acronimo&quot;: &quot;ILJ&quot;,
+            &quot;es_capital&quot;: 0,
+            &quot;municipios&quot;: []
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-provincias-municipios" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-provincias-municipios"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-provincias-municipios"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-provincias-municipios" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-provincias-municipios">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-provincias-municipios" data-method="GET"
+      data-path="api/v1/provincias-municipios"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-provincias-municipios', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-provincias-municipios"
+                    onclick="tryItOut('GETapi-v1-provincias-municipios');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-provincias-municipios"
+                    onclick="cancelTryOut('GETapi-v1-provincias-municipios');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-provincias-municipios"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/provincias-municipios</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-provincias-municipios"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-provincias-municipios"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="endpoints-GETapi-v1-provincias">Obtener todas las provincias</h2>
+
+<p>
+</p>
+
+<p>Obtiene todos los datos de una provincia sin contar su relacion con los municipios</p>
+
+<span id="example-requests-GETapi-v1-provincias">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/provincias" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/provincias"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-provincias">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 58
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;nombre&quot;: &quot;Artemisa&quot;,
+            &quot;acronimo&quot;: &quot;ART&quot;,
+            &quot;es_capital&quot;: 0
+        },
+        {
+            &quot;id&quot;: 2,
+            &quot;nombre&quot;: &quot;Camag&uuml;ey&quot;,
+            &quot;acronimo&quot;: &quot;CMG&quot;,
+            &quot;es_capital&quot;: 0
+        },
+        {
+            &quot;id&quot;: 3,
+            &quot;nombre&quot;: &quot;Ciego de &Aacute;vila&quot;,
+            &quot;acronimo&quot;: &quot;CAV&quot;,
+            &quot;es_capital&quot;: 0
+        },
+        {
+            &quot;id&quot;: 4,
+            &quot;nombre&quot;: &quot;Cienfuegos&quot;,
+            &quot;acronimo&quot;: &quot;CFG&quot;,
+            &quot;es_capital&quot;: 0
+        },
+        {
+            &quot;id&quot;: 5,
+            &quot;nombre&quot;: &quot;Granma&quot;,
+            &quot;acronimo&quot;: &quot;GRM&quot;,
+            &quot;es_capital&quot;: 0
+        },
+        {
+            &quot;id&quot;: 6,
+            &quot;nombre&quot;: &quot;Guant&aacute;namo&quot;,
+            &quot;acronimo&quot;: &quot;GTM&quot;,
+            &quot;es_capital&quot;: 0
+        },
+        {
+            &quot;id&quot;: 7,
+            &quot;nombre&quot;: &quot;Holgu&iacute;n&quot;,
+            &quot;acronimo&quot;: &quot;HOL&quot;,
+            &quot;es_capital&quot;: 0
+        },
+        {
+            &quot;id&quot;: 8,
+            &quot;nombre&quot;: &quot;La Habana&quot;,
+            &quot;acronimo&quot;: &quot;LHA&quot;,
+            &quot;es_capital&quot;: 1
+        },
+        {
+            &quot;id&quot;: 9,
+            &quot;nombre&quot;: &quot;Las Tunas&quot;,
+            &quot;acronimo&quot;: &quot;LTN&quot;,
+            &quot;es_capital&quot;: 0
+        },
+        {
+            &quot;id&quot;: 10,
+            &quot;nombre&quot;: &quot;Matanzas&quot;,
+            &quot;acronimo&quot;: &quot;MTZ&quot;,
+            &quot;es_capital&quot;: 0
+        },
+        {
+            &quot;id&quot;: 11,
+            &quot;nombre&quot;: &quot;Mayabeque&quot;,
+            &quot;acronimo&quot;: &quot;MAY&quot;,
+            &quot;es_capital&quot;: 0
+        },
+        {
+            &quot;id&quot;: 12,
+            &quot;nombre&quot;: &quot;Pinar del R&iacute;o&quot;,
+            &quot;acronimo&quot;: &quot;PNR&quot;,
+            &quot;es_capital&quot;: 0
+        },
+        {
+            &quot;id&quot;: 13,
+            &quot;nombre&quot;: &quot;Sancti Sp&iacute;ritus&quot;,
+            &quot;acronimo&quot;: &quot;SSP&quot;,
+            &quot;es_capital&quot;: 0
+        },
+        {
+            &quot;id&quot;: 14,
+            &quot;nombre&quot;: &quot;Santiago de Cuba&quot;,
+            &quot;acronimo&quot;: &quot;SCU&quot;,
+            &quot;es_capital&quot;: 0
+        },
+        {
+            &quot;id&quot;: 15,
+            &quot;nombre&quot;: &quot;Villa Clara&quot;,
+            &quot;acronimo&quot;: &quot;VCL&quot;,
+            &quot;es_capital&quot;: 0
+        },
+        {
+            &quot;id&quot;: 16,
+            &quot;nombre&quot;: &quot;Isla de la Juventud&quot;,
+            &quot;acronimo&quot;: &quot;ILJ&quot;,
+            &quot;es_capital&quot;: 0
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-provincias" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-provincias"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-provincias"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-provincias" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-provincias">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-provincias" data-method="GET"
+      data-path="api/v1/provincias"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-provincias', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-provincias"
+                    onclick="tryItOut('GETapi-v1-provincias');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-provincias"
+                    onclick="cancelTryOut('GETapi-v1-provincias');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-provincias"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/provincias</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-provincias"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-provincias"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="endpoints-GETapi-v1-provincias--idProvincia-">Obtener Provincia</h2>
+
+<p>
+</p>
+
+<p>Obtiene todos los datos de todas las provincias con su relacion con los municipios y sus datos</p>
+
+<span id="example-requests-GETapi-v1-provincias--idProvincia-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/provincias/molestias" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/provincias/molestias"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-provincias--idProvincia-">
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 57
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;App\\Http\\Controllers\\ProvinceController::show(): Argument #1 ($id) must be of type int, string given, called in D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php on line 54&quot;,
+    &quot;exception&quot;: &quot;TypeError&quot;,
+    &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\app\\Http\\Controllers\\ProvinceController.php&quot;,
+    &quot;line&quot;: 144,
+    &quot;trace&quot;: [
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php&quot;,
+            &quot;line&quot;: 54,
+            &quot;function&quot;: &quot;show&quot;,
+            &quot;class&quot;: &quot;App\\Http\\Controllers\\ProvinceController&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php&quot;,
+            &quot;line&quot;: 43,
+            &quot;function&quot;: &quot;callAction&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Controller&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php&quot;,
+            &quot;line&quot;: 259,
+            &quot;function&quot;: &quot;dispatch&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\ControllerDispatcher&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php&quot;,
+            &quot;line&quot;: 205,
+            &quot;function&quot;: &quot;runController&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Route&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
+            &quot;line&quot;: 799,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Route&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 141,
+            &quot;function&quot;: &quot;Illuminate\\Routing\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php&quot;,
+            &quot;line&quot;: 50,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\SubstituteBindings&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php&quot;,
+            &quot;line&quot;: 159,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php&quot;,
+            &quot;line&quot;: 125,
+            &quot;function&quot;: &quot;handleRequest&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php&quot;,
+            &quot;line&quot;: 87,
+            &quot;function&quot;: &quot;handleRequestUsingNamedLimiter&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 116,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
+            &quot;line&quot;: 798,
+            &quot;function&quot;: &quot;then&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
+            &quot;line&quot;: 777,
+            &quot;function&quot;: &quot;runRouteWithinStack&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
+            &quot;line&quot;: 741,
+            &quot;function&quot;: &quot;runRoute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
+            &quot;line&quot;: 730,
+            &quot;function&quot;: &quot;dispatchToRoute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php&quot;,
+            &quot;line&quot;: 200,
+            &quot;function&quot;: &quot;dispatch&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 141,
+            &quot;function&quot;: &quot;Illuminate\\Foundation\\Http\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php&quot;,
+            &quot;line&quot;: 21,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php&quot;,
+            &quot;line&quot;: 31,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php&quot;,
+            &quot;line&quot;: 21,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php&quot;,
+            &quot;line&quot;: 40,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TrimStrings&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php&quot;,
+            &quot;line&quot;: 27,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php&quot;,
+            &quot;line&quot;: 99,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php&quot;,
+            &quot;line&quot;: 62,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\HandleCors&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php&quot;,
+            &quot;line&quot;: 39,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\TrustProxies&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 116,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php&quot;,
+            &quot;line&quot;: 175,
+            &quot;function&quot;: &quot;then&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php&quot;,
+            &quot;line&quot;: 144,
+            &quot;function&quot;: &quot;sendRequestThroughRouter&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 299,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 287,
+            &quot;function&quot;: &quot;callLaravelOrLumenRoute&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 92,
+            &quot;function&quot;: &quot;makeApiCall&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 45,
+            &quot;function&quot;: &quot;makeResponseCall&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 35,
+            &quot;function&quot;: &quot;makeResponseCallIfConditionsPass&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php&quot;,
+            &quot;line&quot;: 209,
+            &quot;function&quot;: &quot;__invoke&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php&quot;,
+            &quot;line&quot;: 163,
+            &quot;function&quot;: &quot;iterateThroughStrategies&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php&quot;,
+            &quot;line&quot;: 95,
+            &quot;function&quot;: &quot;fetchResponses&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 124,
+            &quot;function&quot;: &quot;processRoute&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 71,
+            &quot;function&quot;: &quot;extractEndpointsInfoFromLaravelApp&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 49,
+            &quot;function&quot;: &quot;extractEndpointsInfoAndWriteToDisk&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\knuckleswtf\\scribe\\src\\Commands\\GenerateDocumentation.php&quot;,
+            &quot;line&quot;: 51,
+            &quot;function&quot;: &quot;get&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php&quot;,
+            &quot;line&quot;: 36,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Commands\\GenerateDocumentation&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php&quot;,
+            &quot;line&quot;: 41,
+            &quot;function&quot;: &quot;Illuminate\\Container\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php&quot;,
+            &quot;line&quot;: 93,
+            &quot;function&quot;: &quot;unwrapIfClosure&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Util&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php&quot;,
+            &quot;line&quot;: 35,
+            &quot;function&quot;: &quot;callBoundMethod&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
+            &quot;line&quot;: 662,
+            &quot;function&quot;: &quot;call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php&quot;,
+            &quot;line&quot;: 211,
+            &quot;function&quot;: &quot;call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\symfony\\console\\Command\\Command.php&quot;,
+            &quot;line&quot;: 326,
+            &quot;function&quot;: &quot;execute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Command\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\symfony\\console\\Application.php&quot;,
+            &quot;line&quot;: 1081,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\symfony\\console\\Application.php&quot;,
+            &quot;line&quot;: 320,
+            &quot;function&quot;: &quot;doRunCommand&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\symfony\\console\\Application.php&quot;,
+            &quot;line&quot;: 174,
+            &quot;function&quot;: &quot;doRun&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php&quot;,
+            &quot;line&quot;: 201,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\artisan&quot;,
+            &quot;line&quot;: 35,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Console\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-provincias--idProvincia-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-provincias--idProvincia-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-provincias--idProvincia-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-provincias--idProvincia-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-provincias--idProvincia-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-provincias--idProvincia-" data-method="GET"
+      data-path="api/v1/provincias/{idProvincia}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-provincias--idProvincia-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-provincias--idProvincia-"
+                    onclick="tryItOut('GETapi-v1-provincias--idProvincia-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-provincias--idProvincia-"
+                    onclick="cancelTryOut('GETapi-v1-provincias--idProvincia-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-provincias--idProvincia-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/provincias/{idProvincia}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-provincias--idProvincia-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-provincias--idProvincia-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>idProvincia</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="idProvincia"                data-endpoint="GETapi-v1-provincias--idProvincia-"
+               value="molestias"
+               data-component="url">
+    <br>
+<p>Example: <code>molestias</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="endpoints-GETapi-v1-municipios">Obtener  municipios</h2>
+
+<p>
+</p>
+
+<p>Obtiene todos los datos de todos los municipios</p>
+
+<span id="example-requests-GETapi-v1-municipios">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/municipios" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/municipios"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-municipios">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 56
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: [
+        {
+            &quot;id_municipio&quot;: 1,
+            &quot;nombre_municipio&quot;: &quot;Alquizar&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 2,
+            &quot;nombre_municipio&quot;: &quot;Artemisa&quot;,
+            &quot;es_cabecera_provincial&quot;: 1
+        },
+        {
+            &quot;id_municipio&quot;: 3,
+            &quot;nombre_municipio&quot;: &quot;Bauta&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 4,
+            &quot;nombre_municipio&quot;: &quot;Caimito&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 5,
+            &quot;nombre_municipio&quot;: &quot;Guanajay&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 6,
+            &quot;nombre_municipio&quot;: &quot;G&uuml;ira de Melena&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 7,
+            &quot;nombre_municipio&quot;: &quot;Mariel&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 8,
+            &quot;nombre_municipio&quot;: &quot;San Antonio de los Ba&ntilde;os&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 9,
+            &quot;nombre_municipio&quot;: &quot;Bah&iacute;a Honda&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 10,
+            &quot;nombre_municipio&quot;: &quot;San Crist&oacute;bal&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 11,
+            &quot;nombre_municipio&quot;: &quot;Candelaria&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 12,
+            &quot;nombre_municipio&quot;: &quot;Camag&uuml;ey&quot;,
+            &quot;es_cabecera_provincial&quot;: 1
+        },
+        {
+            &quot;id_municipio&quot;: 13,
+            &quot;nombre_municipio&quot;: &quot;Carlos Manuel de C&eacute;spedes&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 14,
+            &quot;nombre_municipio&quot;: &quot;Esmeralda&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 15,
+            &quot;nombre_municipio&quot;: &quot;Florida&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 16,
+            &quot;nombre_municipio&quot;: &quot;Guaimaro&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 17,
+            &quot;nombre_municipio&quot;: &quot;Jimag&uuml;ay&uacute;&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 18,
+            &quot;nombre_municipio&quot;: &quot;Minas&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 19,
+            &quot;nombre_municipio&quot;: &quot;Najasa&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 20,
+            &quot;nombre_municipio&quot;: &quot;Nuevitas&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 21,
+            &quot;nombre_municipio&quot;: &quot;Santa Cruz del Sur&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 22,
+            &quot;nombre_municipio&quot;: &quot;Sibanic&uacute;&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 23,
+            &quot;nombre_municipio&quot;: &quot;Sierra de Cubitas&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 24,
+            &quot;nombre_municipio&quot;: &quot;Vertientes&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 25,
+            &quot;nombre_municipio&quot;: &quot;Ciego de &Aacute;vila&quot;,
+            &quot;es_cabecera_provincial&quot;: 1
+        },
+        {
+            &quot;id_municipio&quot;: 26,
+            &quot;nombre_municipio&quot;: &quot;Ciro Redondo&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 27,
+            &quot;nombre_municipio&quot;: &quot;Baragu&aacute;&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 28,
+            &quot;nombre_municipio&quot;: &quot;Bolivia&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 29,
+            &quot;nombre_municipio&quot;: &quot;Chambas&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 30,
+            &quot;nombre_municipio&quot;: &quot;Florencia&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 31,
+            &quot;nombre_municipio&quot;: &quot;Majagua&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 32,
+            &quot;nombre_municipio&quot;: &quot;Mor&oacute;n&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 33,
+            &quot;nombre_municipio&quot;: &quot;Primero de Enero&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 34,
+            &quot;nombre_municipio&quot;: &quot;Venezuela&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 35,
+            &quot;nombre_municipio&quot;: &quot;Cienfuegos&quot;,
+            &quot;es_cabecera_provincial&quot;: 1
+        },
+        {
+            &quot;id_municipio&quot;: 36,
+            &quot;nombre_municipio&quot;: &quot;Aguada de Pasajeros&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 37,
+            &quot;nombre_municipio&quot;: &quot;Cruces&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 38,
+            &quot;nombre_municipio&quot;: &quot;Cumanayagua&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 39,
+            &quot;nombre_municipio&quot;: &quot;Palmira&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 40,
+            &quot;nombre_municipio&quot;: &quot;Rodas&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 41,
+            &quot;nombre_municipio&quot;: &quot;Santa Isabel de las Lajas&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 42,
+            &quot;nombre_municipio&quot;: &quot;Bayamo&quot;,
+            &quot;es_cabecera_provincial&quot;: 1
+        },
+        {
+            &quot;id_municipio&quot;: 43,
+            &quot;nombre_municipio&quot;: &quot;Bartolom&eacute; Mas&oacute;&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 44,
+            &quot;nombre_municipio&quot;: &quot;Buey Arriba&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 45,
+            &quot;nombre_municipio&quot;: &quot;Campechuela&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 46,
+            &quot;nombre_municipio&quot;: &quot;Cauto Cristo&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 47,
+            &quot;nombre_municipio&quot;: &quot;Guisa&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 48,
+            &quot;nombre_municipio&quot;: &quot;Jiguan&iacute;&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 49,
+            &quot;nombre_municipio&quot;: &quot;Manzanillo&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 50,
+            &quot;nombre_municipio&quot;: &quot;Media Luna&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 51,
+            &quot;nombre_municipio&quot;: &quot;Niquero&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 52,
+            &quot;nombre_municipio&quot;: &quot;Pil&oacute;n&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 53,
+            &quot;nombre_municipio&quot;: &quot;R&iacute;o Cauto&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 54,
+            &quot;nombre_municipio&quot;: &quot;Yara&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 55,
+            &quot;nombre_municipio&quot;: &quot;Guant&aacute;namo&quot;,
+            &quot;es_cabecera_provincial&quot;: 1
+        },
+        {
+            &quot;id_municipio&quot;: 56,
+            &quot;nombre_municipio&quot;: &quot;Baracoa&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 57,
+            &quot;nombre_municipio&quot;: &quot;Caimanera&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 58,
+            &quot;nombre_municipio&quot;: &quot;El Salvador&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 59,
+            &quot;nombre_municipio&quot;: &quot;Im&iacute;as&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 60,
+            &quot;nombre_municipio&quot;: &quot;Mais&iacute;&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 61,
+            &quot;nombre_municipio&quot;: &quot;Manuel Tames&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 62,
+            &quot;nombre_municipio&quot;: &quot;Niceto P&eacute;rez&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 63,
+            &quot;nombre_municipio&quot;: &quot;San Antonio del Sur&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 64,
+            &quot;nombre_municipio&quot;: &quot;Yateras&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 65,
+            &quot;nombre_municipio&quot;: &quot;Holgu&iacute;n&quot;,
+            &quot;es_cabecera_provincial&quot;: 1
+        },
+        {
+            &quot;id_municipio&quot;: 66,
+            &quot;nombre_municipio&quot;: &quot;Antilla&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 67,
+            &quot;nombre_municipio&quot;: &quot;B&aacute;guanos&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 68,
+            &quot;nombre_municipio&quot;: &quot;Banes&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 69,
+            &quot;nombre_municipio&quot;: &quot;Cacocum&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 70,
+            &quot;nombre_municipio&quot;: &quot;Calixto Garc&iacute;a&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 71,
+            &quot;nombre_municipio&quot;: &quot;Cueto&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 72,
+            &quot;nombre_municipio&quot;: &quot;Frank Pa&iacute;s&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 73,
+            &quot;nombre_municipio&quot;: &quot;Gibara&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 74,
+            &quot;nombre_municipio&quot;: &quot;Mayar&iacute;&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 75,
+            &quot;nombre_municipio&quot;: &quot;Moa&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 76,
+            &quot;nombre_municipio&quot;: &quot;Rafael Freyre&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 77,
+            &quot;nombre_municipio&quot;: &quot;Sagua de T&aacute;namo&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 78,
+            &quot;nombre_municipio&quot;: &quot;Urbano Noris&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 79,
+            &quot;nombre_municipio&quot;: &quot;Plaza&quot;,
+            &quot;es_cabecera_provincial&quot;: 1
+        },
+        {
+            &quot;id_municipio&quot;: 80,
+            &quot;nombre_municipio&quot;: &quot;Arroyo Naranjo&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 81,
+            &quot;nombre_municipio&quot;: &quot;Boyeros&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 82,
+            &quot;nombre_municipio&quot;: &quot;Cerro&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 83,
+            &quot;nombre_municipio&quot;: &quot;Cotorro&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 84,
+            &quot;nombre_municipio&quot;: &quot;Diez de Octubre&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 85,
+            &quot;nombre_municipio&quot;: &quot;Guanabacoa&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 86,
+            &quot;nombre_municipio&quot;: &quot;Habana del Este&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 87,
+            &quot;nombre_municipio&quot;: &quot;Habana Vieja&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 88,
+            &quot;nombre_municipio&quot;: &quot;La Lisa&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 89,
+            &quot;nombre_municipio&quot;: &quot;Marianao&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 90,
+            &quot;nombre_municipio&quot;: &quot;Playa&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 91,
+            &quot;nombre_municipio&quot;: &quot;Regla&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 92,
+            &quot;nombre_municipio&quot;: &quot;San Miguel del Padr&oacute;n&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 93,
+            &quot;nombre_municipio&quot;: &quot;Centro Habana&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 94,
+            &quot;nombre_municipio&quot;: &quot;Las Tunas&quot;,
+            &quot;es_cabecera_provincial&quot;: 1
+        },
+        {
+            &quot;id_municipio&quot;: 95,
+            &quot;nombre_municipio&quot;: &quot;Amancio Rodr&iacute;guez&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 96,
+            &quot;nombre_municipio&quot;: &quot;Colombia&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 97,
+            &quot;nombre_municipio&quot;: &quot;Jes&uacute;s Men&eacute;ndez&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 98,
+            &quot;nombre_municipio&quot;: &quot;Jobabo&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 99,
+            &quot;nombre_municipio&quot;: &quot;Majibacoa&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 100,
+            &quot;nombre_municipio&quot;: &quot;Manat&iacute;&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 101,
+            &quot;nombre_municipio&quot;: &quot;Puerto Padre&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 102,
+            &quot;nombre_municipio&quot;: &quot;Matanzas&quot;,
+            &quot;es_cabecera_provincial&quot;: 1
+        },
+        {
+            &quot;id_municipio&quot;: 103,
+            &quot;nombre_municipio&quot;: &quot;Calimete&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 104,
+            &quot;nombre_municipio&quot;: &quot;C&aacute;rdenas&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 105,
+            &quot;nombre_municipio&quot;: &quot;Ci&eacute;naga de Zapata&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 106,
+            &quot;nombre_municipio&quot;: &quot;Col&oacute;n&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 107,
+            &quot;nombre_municipio&quot;: &quot;Jag&uuml;ey Grande&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 108,
+            &quot;nombre_municipio&quot;: &quot;Jovellanos&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 109,
+            &quot;nombre_municipio&quot;: &quot;Limonar&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 110,
+            &quot;nombre_municipio&quot;: &quot;Los Arabos&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 111,
+            &quot;nombre_municipio&quot;: &quot;Mart&iacute;&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 112,
+            &quot;nombre_municipio&quot;: &quot;Pedro Betancourt&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 113,
+            &quot;nombre_municipio&quot;: &quot;Perico&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 114,
+            &quot;nombre_municipio&quot;: &quot;Uni&oacute;n de Reyes&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 115,
+            &quot;nombre_municipio&quot;: &quot;San Jos&eacute; de las Lajas&quot;,
+            &quot;es_cabecera_provincial&quot;: 1
+        },
+        {
+            &quot;id_municipio&quot;: 116,
+            &quot;nombre_municipio&quot;: &quot;Bataban&oacute;&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 117,
+            &quot;nombre_municipio&quot;: &quot;Bejucal&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 118,
+            &quot;nombre_municipio&quot;: &quot;G&uuml;ines&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 119,
+            &quot;nombre_municipio&quot;: &quot;Jaruco&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 120,
+            &quot;nombre_municipio&quot;: &quot;Madruga&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 121,
+            &quot;nombre_municipio&quot;: &quot;Melena del Sur&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 122,
+            &quot;nombre_municipio&quot;: &quot;Nueva Paz&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 123,
+            &quot;nombre_municipio&quot;: &quot;Quivic&aacute;n&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 124,
+            &quot;nombre_municipio&quot;: &quot;San Nicol&aacute;s de Bari&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 125,
+            &quot;nombre_municipio&quot;: &quot;Santa Cruz del Norte&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 126,
+            &quot;nombre_municipio&quot;: &quot;Pinar del R&iacute;o&quot;,
+            &quot;es_cabecera_provincial&quot;: 1
+        },
+        {
+            &quot;id_municipio&quot;: 127,
+            &quot;nombre_municipio&quot;: &quot;Consolaci&oacute;n del Sur&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 128,
+            &quot;nombre_municipio&quot;: &quot;Guane&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 129,
+            &quot;nombre_municipio&quot;: &quot;La Palma&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 130,
+            &quot;nombre_municipio&quot;: &quot;Los Palacios&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 131,
+            &quot;nombre_municipio&quot;: &quot;Mantua&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 132,
+            &quot;nombre_municipio&quot;: &quot;Minas de Matahambre&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 133,
+            &quot;nombre_municipio&quot;: &quot;San Juan y Mart&iacute;nez&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 134,
+            &quot;nombre_municipio&quot;: &quot;San Luis&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 135,
+            &quot;nombre_municipio&quot;: &quot;Sandino&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 136,
+            &quot;nombre_municipio&quot;: &quot;Vi&ntilde;ales&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 137,
+            &quot;nombre_municipio&quot;: &quot;Sancti Sp&iacute;ritus&quot;,
+            &quot;es_cabecera_provincial&quot;: 1
+        },
+        {
+            &quot;id_municipio&quot;: 138,
+            &quot;nombre_municipio&quot;: &quot;Cabaig&uacute;an&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 139,
+            &quot;nombre_municipio&quot;: &quot;Fomento&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 140,
+            &quot;nombre_municipio&quot;: &quot;Jatibonico&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 141,
+            &quot;nombre_municipio&quot;: &quot;La Sierpe&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 142,
+            &quot;nombre_municipio&quot;: &quot;Taguasco&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 143,
+            &quot;nombre_municipio&quot;: &quot;Trinidad&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 144,
+            &quot;nombre_municipio&quot;: &quot;Yaguajay&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 145,
+            &quot;nombre_municipio&quot;: &quot;Santiago de Cuba&quot;,
+            &quot;es_cabecera_provincial&quot;: 1
+        },
+        {
+            &quot;id_municipio&quot;: 146,
+            &quot;nombre_municipio&quot;: &quot;Contramaestre&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 147,
+            &quot;nombre_municipio&quot;: &quot;Guam&aacute;&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 148,
+            &quot;nombre_municipio&quot;: &quot;Julio Antonio Mella&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 149,
+            &quot;nombre_municipio&quot;: &quot;Palma Soriano&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 150,
+            &quot;nombre_municipio&quot;: &quot;San Luis&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 151,
+            &quot;nombre_municipio&quot;: &quot;Segundo Frente&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 152,
+            &quot;nombre_municipio&quot;: &quot;Songo la Maya&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 153,
+            &quot;nombre_municipio&quot;: &quot;Tercer Frente&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 154,
+            &quot;nombre_municipio&quot;: &quot;Santa Clara&quot;,
+            &quot;es_cabecera_provincial&quot;: 1
+        },
+        {
+            &quot;id_municipio&quot;: 155,
+            &quot;nombre_municipio&quot;: &quot;Caibari&eacute;n&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 156,
+            &quot;nombre_municipio&quot;: &quot;Camajuan&iacute;&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 157,
+            &quot;nombre_municipio&quot;: &quot;Cifuentes&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 158,
+            &quot;nombre_municipio&quot;: &quot;Corralillo&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 159,
+            &quot;nombre_municipio&quot;: &quot;Encrucijada&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 160,
+            &quot;nombre_municipio&quot;: &quot;Manicaragua&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 161,
+            &quot;nombre_municipio&quot;: &quot;Placetas&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 162,
+            &quot;nombre_municipio&quot;: &quot;Quemado de G&uuml;ines&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 163,
+            &quot;nombre_municipio&quot;: &quot;Ranchuelo&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 164,
+            &quot;nombre_municipio&quot;: &quot;Sagua la Grande&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 165,
+            &quot;nombre_municipio&quot;: &quot;Santo Domingo&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        },
+        {
+            &quot;id_municipio&quot;: 166,
+            &quot;nombre_municipio&quot;: &quot;Remedios&quot;,
+            &quot;es_cabecera_provincial&quot;: 0
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-municipios" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-municipios"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-municipios"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-municipios" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-municipios">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-municipios" data-method="GET"
+      data-path="api/v1/municipios"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-municipios', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-municipios"
+                    onclick="tryItOut('GETapi-v1-municipios');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-municipios"
+                    onclick="cancelTryOut('GETapi-v1-municipios');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-municipios"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/municipios</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-municipios"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-municipios"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="endpoints-GETapi-v1-municipios--idMunicipio-">Obtener Municipio</h2>
+
+<p>
+</p>
+
+<p>Obtiene todos los datos de un municipio</p>
+
+<span id="example-requests-GETapi-v1-municipios--idMunicipio-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/municipios/quia" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/municipios/quia"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-municipios--idMunicipio-">
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 55
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;App\\Http\\Controllers\\MunicipalityController::show(): Argument #1 ($id) must be of type int, string given, called in D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php on line 54&quot;,
+    &quot;exception&quot;: &quot;TypeError&quot;,
+    &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\app\\Http\\Controllers\\MunicipalityController.php&quot;,
+    &quot;line&quot;: 89,
+    &quot;trace&quot;: [
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php&quot;,
+            &quot;line&quot;: 54,
+            &quot;function&quot;: &quot;show&quot;,
+            &quot;class&quot;: &quot;App\\Http\\Controllers\\MunicipalityController&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php&quot;,
+            &quot;line&quot;: 43,
+            &quot;function&quot;: &quot;callAction&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Controller&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php&quot;,
+            &quot;line&quot;: 259,
+            &quot;function&quot;: &quot;dispatch&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\ControllerDispatcher&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php&quot;,
+            &quot;line&quot;: 205,
+            &quot;function&quot;: &quot;runController&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Route&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
+            &quot;line&quot;: 799,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Route&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 141,
+            &quot;function&quot;: &quot;Illuminate\\Routing\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php&quot;,
+            &quot;line&quot;: 50,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\SubstituteBindings&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php&quot;,
+            &quot;line&quot;: 159,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php&quot;,
+            &quot;line&quot;: 125,
+            &quot;function&quot;: &quot;handleRequest&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php&quot;,
+            &quot;line&quot;: 87,
+            &quot;function&quot;: &quot;handleRequestUsingNamedLimiter&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 116,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
+            &quot;line&quot;: 798,
+            &quot;function&quot;: &quot;then&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
+            &quot;line&quot;: 777,
+            &quot;function&quot;: &quot;runRouteWithinStack&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
+            &quot;line&quot;: 741,
+            &quot;function&quot;: &quot;runRoute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
+            &quot;line&quot;: 730,
+            &quot;function&quot;: &quot;dispatchToRoute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php&quot;,
+            &quot;line&quot;: 200,
+            &quot;function&quot;: &quot;dispatch&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 141,
+            &quot;function&quot;: &quot;Illuminate\\Foundation\\Http\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php&quot;,
+            &quot;line&quot;: 21,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php&quot;,
+            &quot;line&quot;: 31,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php&quot;,
+            &quot;line&quot;: 21,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php&quot;,
+            &quot;line&quot;: 40,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TrimStrings&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php&quot;,
+            &quot;line&quot;: 27,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php&quot;,
+            &quot;line&quot;: 99,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php&quot;,
+            &quot;line&quot;: 62,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\HandleCors&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php&quot;,
+            &quot;line&quot;: 39,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\TrustProxies&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 116,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php&quot;,
+            &quot;line&quot;: 175,
+            &quot;function&quot;: &quot;then&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php&quot;,
+            &quot;line&quot;: 144,
+            &quot;function&quot;: &quot;sendRequestThroughRouter&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 299,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 287,
+            &quot;function&quot;: &quot;callLaravelOrLumenRoute&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 92,
+            &quot;function&quot;: &quot;makeApiCall&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 45,
+            &quot;function&quot;: &quot;makeResponseCall&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 35,
+            &quot;function&quot;: &quot;makeResponseCallIfConditionsPass&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php&quot;,
+            &quot;line&quot;: 209,
+            &quot;function&quot;: &quot;__invoke&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php&quot;,
+            &quot;line&quot;: 163,
+            &quot;function&quot;: &quot;iterateThroughStrategies&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php&quot;,
+            &quot;line&quot;: 95,
+            &quot;function&quot;: &quot;fetchResponses&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 124,
+            &quot;function&quot;: &quot;processRoute&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 71,
+            &quot;function&quot;: &quot;extractEndpointsInfoFromLaravelApp&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 49,
+            &quot;function&quot;: &quot;extractEndpointsInfoAndWriteToDisk&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\knuckleswtf\\scribe\\src\\Commands\\GenerateDocumentation.php&quot;,
+            &quot;line&quot;: 51,
+            &quot;function&quot;: &quot;get&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php&quot;,
+            &quot;line&quot;: 36,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Commands\\GenerateDocumentation&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php&quot;,
+            &quot;line&quot;: 41,
+            &quot;function&quot;: &quot;Illuminate\\Container\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php&quot;,
+            &quot;line&quot;: 93,
+            &quot;function&quot;: &quot;unwrapIfClosure&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Util&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php&quot;,
+            &quot;line&quot;: 35,
+            &quot;function&quot;: &quot;callBoundMethod&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
+            &quot;line&quot;: 662,
+            &quot;function&quot;: &quot;call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php&quot;,
+            &quot;line&quot;: 211,
+            &quot;function&quot;: &quot;call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\symfony\\console\\Command\\Command.php&quot;,
+            &quot;line&quot;: 326,
+            &quot;function&quot;: &quot;execute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Command\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\symfony\\console\\Application.php&quot;,
+            &quot;line&quot;: 1081,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\symfony\\console\\Application.php&quot;,
+            &quot;line&quot;: 320,
+            &quot;function&quot;: &quot;doRunCommand&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\symfony\\console\\Application.php&quot;,
+            &quot;line&quot;: 174,
+            &quot;function&quot;: &quot;doRun&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php&quot;,
+            &quot;line&quot;: 201,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\workplace\\cuba-api\\artisan&quot;,
+            &quot;line&quot;: 35,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Console\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-municipios--idMunicipio-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-municipios--idMunicipio-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-municipios--idMunicipio-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-municipios--idMunicipio-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-municipios--idMunicipio-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-municipios--idMunicipio-" data-method="GET"
+      data-path="api/v1/municipios/{idMunicipio}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-municipios--idMunicipio-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-municipios--idMunicipio-"
+                    onclick="tryItOut('GETapi-v1-municipios--idMunicipio-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-municipios--idMunicipio-"
+                    onclick="cancelTryOut('GETapi-v1-municipios--idMunicipio-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-municipios--idMunicipio-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/municipios/{idMunicipio}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-municipios--idMunicipio-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-municipios--idMunicipio-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>idMunicipio</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="idMunicipio"                data-endpoint="GETapi-v1-municipios--idMunicipio-"
+               value="quia"
+               data-component="url">
+    <br>
+<p>Example: <code>quia</code></p>
+            </div>
+                    </form>
+
+            
+
+        
+    </div>
+    <div class="dark-box">
+                    <div class="lang-selector">
+                                                        <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                                        <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                            </div>
+            </div>
+</div>
+</body>
+</html>
