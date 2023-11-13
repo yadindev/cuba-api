@@ -82,7 +82,7 @@ Cuba-api ha sido desarrollado por [ Yadin ](https://github.com/yadindev).
    php artisan migrate
    ```
 
-8. Opcionalmente, puedes ejecutar el comando `php artisan db:seed` para agregar datos predefinidos a la base de datos.
+8. Opcionalmente, puedes ejecutar el comando `php artisan db:seed` para agregar datos predefinidos en el proyecto a la base de datos.
 
 9. Inicia el servidor de desarrollo de Laravel:
 
